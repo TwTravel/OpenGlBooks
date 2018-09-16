@@ -1,0 +1,59 @@
+##
+##  Makefile for Windows NT
+##
+
+
+!include <ntwin32.mak>
+
+CFLAGS   = $(cdebug) -DWIN32 -nologo -w
+LIBS     = glut.lib glu32.lib opengl32.lib $(guilibs)
+
+
+EXES     = aaindex.exe aargb.exe accanti.exe accpersp.exe \
+	alpha.exe alpha3d.exe bezcurve.exe bezmesh.exe bezsurf.exe \
+	checker.exe clip.exe colormat.exe cube.exe dof.exe double.exe \
+	drawf.exe feedback.exe fog.exe fogindex.exe font.exe \
+	hello.exe image.exe light.exe lines.exe list.exe \
+	material.exe mipmap.exe model.exe movelight.exe \
+	pickdepth.exe picksquare.exe planet.exe polyoff.exe \
+	polys.exe quadric.exe robot.exe scene.exe select.exe \
+	smooth.exe stencil.exe stroke.exe surface.exe surfpoints.exe \
+	teapots.exe tess.exe tesswind.exe texbind.exe texgen.exe texprox.exe \
+	texsub.exe texture3d.exe texturesurf.exe torus.exe trim.exe \
+	unproject.exe varray.exe wrap.exe
+
+IMAGING_SUBSET = colormatrix.exe colortable.exe convolution.exe \
+	histogram.exe minmax.exe blendeqn.exe
+
+
+all             : $(EXES) $(IMAGING_SUBSET)
+
+
+.c.exe:
+	$(CC) $(CFLAGS) -c $<
+	$(link) $(linkdebug) -nologo -out:$@ $*.obj $(LIBS)
+
+.c.obj:
+	$(CC) $(CFLAGS) -c $<
+
+colormatrix.exe : colormatrix.obj readImage.obj
+	$(link) $(linkdebug) -nologo -out:$@ $*.obj $(LIBS)
+
+colortable.exe : colortable.obj readImage.obj
+	$(link) $(linkdebug) -nologo -out:$@ $*.obj $(LIBS)
+
+convolution.exe : convolution.obj readImage.obj
+	$(link) $(linkdebug) -nologo -out:$@ $*.obj $(LIBS)
+
+histogram.exe : histogram.obj readImage.obj
+	$(link) $(linkdebug) -nologo -out:$@ $*.obj $(LIBS)
+
+minmax.exe : minmax.obj readImage.obj
+	$(link) $(linkdebug) -nologo -out:$@ $*.obj $(LIBS)
+
+blendeqn.exe : blendeqn.obj readImage.obj
+	$(link) $(linkdebug) -nologo -out:$@ $*.obj $(LIBS)
+
+clean:
+        rm -f *.exe *.obj *.pdb
+

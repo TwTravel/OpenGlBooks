@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C++ Express 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ch03_instancing2", "ch03_instancing2\ch03_instancing2.vcxproj", "{62F77E86-A23D-4323-963C-1AB726FA76B0}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ch03_primitive_restart", "ch03_primitive_restart\ch03_primitive_restart.vcxproj", "{AADF3DB4-3C4C-4235-B58A-CA8A9651774E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ch03_drawcommands", "ch03_drawcommands\ch03_drawcommands.vcxproj", "{F8F88EAC-80EF-46E3-B325-EC4F7DC0E03A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ch03_pointsprites", "ch03_pointsprites\ch03_pointsprites.vcxproj", "{DF143122-DAA2-406E-A580-80889404BA1D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{62F77E86-A23D-4323-963C-1AB726FA76B0}.Debug|Win32.ActiveCfg = Debug|Win32
+		{62F77E86-A23D-4323-963C-1AB726FA76B0}.Debug|Win32.Build.0 = Debug|Win32
+		{62F77E86-A23D-4323-963C-1AB726FA76B0}.Release|Win32.ActiveCfg = Release|Win32
+		{62F77E86-A23D-4323-963C-1AB726FA76B0}.Release|Win32.Build.0 = Release|Win32
+		{AADF3DB4-3C4C-4235-B58A-CA8A9651774E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{AADF3DB4-3C4C-4235-B58A-CA8A9651774E}.Debug|Win32.Build.0 = Debug|Win32
+		{AADF3DB4-3C4C-4235-B58A-CA8A9651774E}.Release|Win32.ActiveCfg = Release|Win32
+		{AADF3DB4-3C4C-4235-B58A-CA8A9651774E}.Release|Win32.Build.0 = Release|Win32
+		{F8F88EAC-80EF-46E3-B325-EC4F7DC0E03A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F8F88EAC-80EF-46E3-B325-EC4F7DC0E03A}.Debug|Win32.Build.0 = Debug|Win32
+		{F8F88EAC-80EF-46E3-B325-EC4F7DC0E03A}.Release|Win32.ActiveCfg = Release|Win32
+		{F8F88EAC-80EF-46E3-B325-EC4F7DC0E03A}.Release|Win32.Build.0 = Release|Win32
+		{DF143122-DAA2-406E-A580-80889404BA1D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{DF143122-DAA2-406E-A580-80889404BA1D}.Debug|Win32.Build.0 = Debug|Win32
+		{DF143122-DAA2-406E-A580-80889404BA1D}.Release|Win32.ActiveCfg = Release|Win32
+		{DF143122-DAA2-406E-A580-80889404BA1D}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

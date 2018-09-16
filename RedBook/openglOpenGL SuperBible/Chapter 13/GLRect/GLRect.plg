@@ -1,0 +1,32 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: GLRect - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\Owner\LOCALS~1\Temp\RSP34D.tmp" with contents
+[
+/nologo /ML /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /Fp"Release/GLRect.pch" /YX /Fo"Release/" /Fd"Release/" /FD /c 
+"G:\Sample Programs\Windows\Chapter 13\GLRect\GLRect.c"
+]
+Creating command line "cl.exe @C:\DOCUME~1\Owner\LOCALS~1\Temp\RSP34D.tmp" 
+Creating temporary file "C:\DOCUME~1\Owner\LOCALS~1\Temp\RSP34E.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib opengl32.lib glu32.lib /nologo /subsystem:windows /incremental:no /pdb:"Release/GLRect.pdb" /machine:I386 /out:"Release/GLRect.exe" 
+".\Release\GLRect.obj"
+]
+Creating command line "link.exe @C:\DOCUME~1\Owner\LOCALS~1\Temp\RSP34E.tmp"
+<h3>Output Window</h3>
+Compiling...
+GLRect.c
+Linking...
+
+
+
+<h3>Results</h3>
+GLRect.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

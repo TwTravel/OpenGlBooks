@@ -1,0 +1,258 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\GLView.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\GLView.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 250, 54
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About GLView"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "GLView Version 2.0",IDC_STATIC,85,12,87,8,SS_NOPREFIX
+    LTEXT           "Copyright © 1999-2004, Richard S. Wright Jr.",
+                    IDC_STATIC,85,24,158,8
+    DEFPUSHBUTTON   "OK",IDOK,193,7,50,14,WS_GROUP
+    CONTROL         130,IDC_STATIC,"Static",SS_BITMAP | SS_SUNKEN,7,7,71,36,
+                    WS_EX_CLIENTEDGE
+    LTEXT           "OpenGL SuperBible, 3rd Edition",IDC_STATIC,85,35,128,8
+END
+
+IDD_GLVIEW_DIALOG DIALOGEX 0, 0, 434, 262
+STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "GLView"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LISTBOX         IDC_LIST,71,16,290,66,LBS_USETABSTOPS | WS_VSCROLL | 
+                    WS_TABSTOP,WS_EX_DLGMODALFRAME | WS_EX_CLIENTEDGE | 
+                    WS_EX_STATICEDGE
+    LTEXT           "#",IDC_STATIC,75,7,9,9
+    LTEXT           "Type",IDC_STATIC,90,7,17,9
+    LTEXT           "Color (R-G-B-A)",IDC_STATIC,170,7,55,9
+    LTEXT           "Z Depth",IDC_STATIC,226,7,28,9
+    LTEXT           "Stencil",IDC_STATIC,262,7,26,9
+    LTEXT           "Buff.",IDC_STATIC,116,7,20,9
+    LTEXT           "Accum. (R-G-B-A)",IDC_STATIC,296,7,61,9
+    LTEXT           "Type",IDC_STATIC,138,7,17,9
+    GROUPBOX        "Test Window",IDC_TEST_FRAME,295,84,128,106,0,
+                    WS_EX_TRANSPARENT
+    GROUPBOX        "Vendor Information",IDC_STATIC,159,195,265,58
+    LTEXT           "Vendor:",IDC_STATIC,166,204,27,9
+    LTEXT           "Renderer:",IDC_STATIC,166,215,35,9
+    LTEXT           "GL Version:",IDC_STATIC,166,226,41,9
+    LTEXT           "GLU Version:",IDC_STATIC,166,237,45,9
+    LTEXT           "Vendor Name",IDC_VENDOR,217,204,114,9
+    LTEXT           "Renderer Name",IDC_RENDERER,217,215,114,9
+    LTEXT           "Version Info",IDC_VERSION,217,226,114,9
+    LTEXT           "Glu Version Info.",IDC_GLUVERSION,217,237,113,9
+    CONTROL         130,IDC_STATIC,"Static",SS_BITMAP | SS_SUNKEN,343,209,71,
+                    36,WS_EX_CLIENTEDGE
+    GROUPBOX        "GL Extensions",IDC_STATIC,7,84,139,106
+    LTEXT           "Program by Richard S. Wright Jr.",IDC_STATIC,8,200,104,
+                    8
+    LTEXT           "Copyright © 1999-2004, All Rights Reserved",IDC_STATIC,
+                    8,228,147,8
+    LTEXT           "OpenGL SuperBible, 3rd Edition",IDC_STATIC,8,239,101,8
+    LTEXT           "opengl@bellsouth.net",IDC_STATIC,8,209,70,8
+    LTEXT           "http://www.starstonesoftware.com/OpenGL",IDC_STATIC,8,
+                    219,140,8
+    LISTBOX         IDC_LST_EXT,10,94,129,92,LBS_SORT | WS_VSCROLL | 
+                    WS_HSCROLL | WS_TABSTOP
+    GROUPBOX        "WGL Extensions",IDC_STATIC,151,84,138,106
+    LISTBOX         IDC_LST_EXT2,156,94,129,92,LBS_SORT | WS_VSCROLL | 
+                    WS_HSCROLL | WS_TABSTOP
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "GLView MFC Application\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "GLView\0"
+            VALUE "LegalCopyright", "Copyright (C) 1999\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "GLView.EXE\0"
+            VALUE "ProductName", "GLView Application\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 47
+    END
+
+    IDD_GLVIEW_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 422
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 255
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_OPENGL              BITMAP  DISCARDABLE     "res\\smallgl.BMP"
+IDB_BM_NOGL             BITMAP  DISCARDABLE     "res\\Nogl.bmp"
+IDB_BITMAP1             BITMAP  DISCARDABLE     "res\\Block1.BMP"
+IDB_BITMAP2             BITMAP  DISCARDABLE     "res\\Block2.BMP"
+IDB_BITMAP3             BITMAP  DISCARDABLE     "res\\Block3.BMP"
+IDB_BITMAP4             BITMAP  DISCARDABLE     "res\\Block4.BMP"
+IDB_BITMAP5             BITMAP  DISCARDABLE     "res\\Block5.BMP"
+IDB_BITMAP6             BITMAP  DISCARDABLE     "res\\Block6.BMP"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "&About GLView..."
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\GLView.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

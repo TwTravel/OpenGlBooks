@@ -1,0 +1,141 @@
+#
+# Copyright (c) 1993-1999, Silicon Graphics, Inc.
+# ALL RIGHTS RESERVED
+# Permission to use, copy, modify, and distribute this software for
+# any purpose and without fee is hereby granted, provided that the above
+# copyright notice appear in all copies and that both the copyright notice
+# and this permission notice appear in supporting documentation, and that
+# the name of Silicon Graphics, Inc. not be used in advertising
+# or publicity pertaining to distribution of the software without specific,
+# written prior permission.
+#
+# THE MATERIAL EMBODIED ON THIS SOFTWARE IS PROVIDED TO YOU "AS-IS"
+# AND WITHOUT WARRANTY OF ANY KIND, EXPRESS, IMPLIED OR OTHERWISE,
+# INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY OR
+# FITNESS FOR A PARTICULAR PURPOSE.  IN NO EVENT SHALL SILICON
+# GRAPHICS, INC.  BE LIABLE TO YOU OR ANYONE ELSE FOR ANY DIRECT,
+# SPECIAL, INCIDENTAL, INDIRECT OR CONSEQUENTIAL DAMAGES OF ANY
+# KIND, OR ANY DAMAGES WHATSOEVER, INCLUDING WITHOUT LIMITATION,
+# LOSS OF PROFIT, LOSS OF USE, SAVINGS OR REVENUE, OR THE CLAIMS OF
+# THIRD PARTIES, WHETHER OR NOT SILICON GRAPHICS, INC.  HAS BEEN
+# ADVISED OF THE POSSIBILITY OF SUCH LOSS, HOWEVER CAUSED AND ON
+# ANY THEORY OF LIABILITY, ARISING OUT OF OR IN CONNECTION WITH THE
+# POSSESSION, USE OR PERFORMANCE OF THIS SOFTWARE.
+#
+# US Government Users Restricted Rights
+# Use, duplication, or disclosure by the Government is subject to
+# restrictions set forth in FAR 52.227.19(c)(2) or subparagraph
+# (c)(1)(ii) of the Rights in Technical Data and Computer Software
+# clause at DFARS 252.227-7013 and/or in similar or successor
+# clauses in the FAR or the DOD or NASA FAR Supplement.
+# Unpublished-- rights reserved under the copyright laws of the
+# United States.  Contractor/manufacturer is Silicon Graphics,
+# Inc., 2011 N.  Shoreline Blvd., Mountain View, CA 94039-7311.
+#
+# OpenGL(R) is a registered trademark of Silicon Graphics, Inc.
+#
+
+TARGETS = aaindex aapoly aargb accanti accpersp \
+	alpha alpha3D bezcurve bezmesh bezsurf \
+	checker clip colormat cube dof double \
+	drawf feedback fog fogindex font hello \
+	image light lines list material mipmap \
+	model movelight pickdepth picksquare planet \
+	polyoff polys quadric robot scene select \
+	smooth stencil stroke surface teapots tess \
+	tesswind texbind texgen texprox texsub texturesurf \
+	torus trim unproject varray wrap
+
+IMAGING_SUBSET = colormatrix colortable convolution minmax histogram blendeqn
+
+SRCS = aaindex.c aapoly.c aargb.c accanti.c accpersp.c \
+	alpha.c alpha3D.c bezcurve.c bezmesh.c bezsurf.c \
+	checker.c clip.c colormat.c cube.c dof.c double.c \
+	drawf.c feedback.c fog.c fogindex.c font.c hello.c \
+	image.c light.c lines.c list.c material.c mipmap.c \
+	model.c movelight.c pickdepth.c picksquare.c planet.c \
+	polyoff.c polys.c quadric.c robot.c scene.c select.c \
+	smooth.c stencil.c stroke.c surface.c teapots.c tess.c \
+	tesswind.c texbind.c texgen.c texprox.c texsub.c texturesurf.c \
+	torus.c trim.c unproject.c varray.c wrap.c
+
+#
+#  You may need to modify DEP_LIBRARIES and INCLUDES so that
+#  GLUT is found.  This example assumes that GLUT is
+#  placed two directories above this one.
+#
+
+DEP_LIBRARIES = ../../lib/glut/libglut.a
+
+LOCAL_LIBRARIES = $(DEP_LIBRARIES) -lXmu -lXext $(XLIB) -lGL -lGLU
+
+INCLUDES = -I$(TOP) -I../.. -I$(INCLUDEDIR)/GL
+
+AllTarget($(TARGETS) $(IMAGING_SUBSET))
+
+NormalProgramTarget(aaindex,aaindex.o,$(DEP_LIBRARIES),$(LOCAL_LIBRARIES),-lm)
+NormalProgramTarget(aapoly,aapoly.o,$(DEP_LIBRARIES),$(LOCAL_LIBRARIES),-lm)
+NormalProgramTarget(aargb,aargb.o,$(DEP_LIBRARIES),$(LOCAL_LIBRARIES),-lm)
+NormalProgramTarget(accanti,accanti.o,$(DEP_LIBRARIES),$(LOCAL_LIBRARIES),-lm)
+NormalProgramTarget(accpersp,accpersp.o,$(DEP_LIBRARIES),$(LOCAL_LIBRARIES),-lm)
+NormalProgramTarget(alpha,alpha.o,$(DEP_LIBRARIES),$(LOCAL_LIBRARIES),-lm)
+NormalProgramTarget(alpha3D,alpha3D.o,$(DEP_LIBRARIES),$(LOCAL_LIBRARIES),-lm)
+NormalProgramTarget(bezcurve,bezcurve.o,$(DEP_LIBRARIES),$(LOCAL_LIBRARIES),-lm)
+NormalProgramTarget(bezmesh,bezmesh.o,$(DEP_LIBRARIES),$(LOCAL_LIBRARIES),-lm)
+NormalProgramTarget(bezsurf,bezsurf.o,$(DEP_LIBRARIES),$(LOCAL_LIBRARIES),-lm)
+NormalProgramTarget(checker,checker.o,$(DEP_LIBRARIES),$(LOCAL_LIBRARIES),-lm)
+NormalProgramTarget(clip,clip.o,$(DEP_LIBRARIES),$(LOCAL_LIBRARIES),-lm)
+NormalProgramTarget(colormat,colormat.o,$(DEP_LIBRARIES),$(LOCAL_LIBRARIES),-lm)
+NormalProgramTarget(cube,cube.o,$(DEP_LIBRARIES),$(LOCAL_LIBRARIES),-lm)
+NormalProgramTarget(dof,dof.o,$(DEP_LIBRARIES),$(LOCAL_LIBRARIES),-lm)
+NormalProgramTarget(double,double.o,$(DEP_LIBRARIES),$(LOCAL_LIBRARIES),-lm)
+NormalProgramTarget(drawf,drawf.o,$(DEP_LIBRARIES),$(LOCAL_LIBRARIES),-lm)
+NormalProgramTarget(feedback,feedback.o,$(DEP_LIBRARIES),$(LOCAL_LIBRARIES),-lm)
+NormalProgramTarget(fog,fog.o,$(DEP_LIBRARIES),$(LOCAL_LIBRARIES),-lm)
+NormalProgramTarget(fogindex,fogindex.o,$(DEP_LIBRARIES),$(LOCAL_LIBRARIES),-lm)
+NormalProgramTarget(font,font.o,$(DEP_LIBRARIES),$(LOCAL_LIBRARIES),-lm)
+NormalProgramTarget(hello,hello.o,$(DEP_LIBRARIES),$(LOCAL_LIBRARIES),-lm)
+NormalProgramTarget(image,image.o,$(DEP_LIBRARIES),$(LOCAL_LIBRARIES),-lm)
+NormalProgramTarget(light,light.o,$(DEP_LIBRARIES),$(LOCAL_LIBRARIES),-lm)
+NormalProgramTarget(lines,lines.o,$(DEP_LIBRARIES),$(LOCAL_LIBRARIES),-lm)
+NormalProgramTarget(list,list.o,$(DEP_LIBRARIES),$(LOCAL_LIBRARIES),-lm)
+NormalProgramTarget(material,material.o,$(DEP_LIBRARIES),$(LOCAL_LIBRARIES),-lm)
+NormalProgramTarget(mipmap,mipmap.o,$(DEP_LIBRARIES),$(LOCAL_LIBRARIES),-lm)
+NormalProgramTarget(model,model.o,$(DEP_LIBRARIES),$(LOCAL_LIBRARIES),-lm)
+NormalProgramTarget(movelight,movelight.o,$(DEP_LIBRARIES),$(LOCAL_LIBRARIES),-lm)
+NormalProgramTarget(pickdepth,pickdepth.o,$(DEP_LIBRARIES),$(LOCAL_LIBRARIES),-lm)
+NormalProgramTarget(picksquare,picksquare.o,$(DEP_LIBRARIES),$(LOCAL_LIBRARIES),-lm)
+NormalProgramTarget(planet,planet.o,$(DEP_LIBRARIES),$(LOCAL_LIBRARIES),-lm)
+NormalProgramTarget(polyoff,polyoff.o,$(DEP_LIBRARIES),$(LOCAL_LIBRARIES),-lm)
+NormalProgramTarget(polys,polys.o,$(DEP_LIBRARIES),$(LOCAL_LIBRARIES),-lm)
+NormalProgramTarget(quadric,quadric.o,$(DEP_LIBRARIES),$(LOCAL_LIBRARIES),-lm)
+NormalProgramTarget(robot,robot.o,$(DEP_LIBRARIES),$(LOCAL_LIBRARIES),-lm)
+NormalProgramTarget(scene,scene.o,$(DEP_LIBRARIES),$(LOCAL_LIBRARIES),-lm)
+NormalProgramTarget(select,select.o,$(DEP_LIBRARIES),$(LOCAL_LIBRARIES),-lm)
+NormalProgramTarget(smooth,smooth.o,$(DEP_LIBRARIES),$(LOCAL_LIBRARIES),-lm)
+NormalProgramTarget(stencil,stencil.o,$(DEP_LIBRARIES),$(LOCAL_LIBRARIES),-lm)
+NormalProgramTarget(stroke,stroke.o,$(DEP_LIBRARIES),$(LOCAL_LIBRARIES),-lm)
+NormalProgramTarget(surface,surface.o,$(DEP_LIBRARIES),$(LOCAL_LIBRARIES),-lm)
+NormalProgramTarget(teapots,teapots.o,$(DEP_LIBRARIES),$(LOCAL_LIBRARIES),-lm)
+NormalProgramTarget(tess,tess.o,$(DEP_LIBRARIES),$(LOCAL_LIBRARIES),-lm)
+NormalProgramTarget(tesswind,tesswind.o,$(DEP_LIBRARIES),$(LOCAL_LIBRARIES),-lm)
+NormalProgramTarget(texbind,texbind.o,$(DEP_LIBRARIES),$(LOCAL_LIBRARIES),-lm)
+NormalProgramTarget(texgen,texgen.o,$(DEP_LIBRARIES),$(LOCAL_LIBRARIES),-lm)
+NormalProgramTarget(texprox,texprox.o,$(DEP_LIBRARIES),$(LOCAL_LIBRARIES),-lm)
+NormalProgramTarget(texsub,texsub.o,$(DEP_LIBRARIES),$(LOCAL_LIBRARIES),-lm)
+NormalProgramTarget(texturesurf,texturesurf.o,$(DEP_LIBRARIES),$(LOCAL_LIBRARIES),-lm)
+NormalProgramTarget(torus,torus.o,$(DEP_LIBRARIES),$(LOCAL_LIBRARIES),-lm)
+NormalProgramTarget(trim,trim.o,$(DEP_LIBRARIES),$(LOCAL_LIBRARIES),-lm)
+NormalProgramTarget(unproject,unproject.o,$(DEP_LIBRARIES),$(LOCAL_LIBRARIES),-lm)
+NormalProgramTarget(varray,varray.o,$(DEP_LIBRARIES),$(LOCAL_LIBRARIES),-lm)
+NormalProgramTarget(wrap,wrap.o,$(DEP_LIBRARIES),$(LOCAL_LIBRARIES),-lm)
+
+NormalProgramTarget(colormatrix,colormatrix.o readImage.o,$(DEP_LIBRARIES),$(LOCAL_LIBRARIES),-lm)
+NormalProgramTarget(colortable,colortable.o readImage.o,$(DEP_LIBRARIES),$(LOCAL_LIBRARIES),-lm)
+NormalProgramTarget(convolution,convolution.o readImage.o,$(DEP_LIBRARIES),$(LOCAL_LIBRARIES),-lm)
+NormalProgramTarget(minmax,minmax.o readImage.o,$(DEP_LIBRARIES),$(LOCAL_LIBRARIES),-lm)
+NormalProgramTarget(histogram,histogram.o readImage.o,$(DEP_LIBRARIES),$(LOCAL_LIBRARIES),-lm)
+NormalProgramTarget(blendeqn,blendeqn.o readImage.o,$(DEP_LIBRARIES),$(LOCAL_LIBRARIES),-lm)
+
+DependTarget()
+CleanTarget()

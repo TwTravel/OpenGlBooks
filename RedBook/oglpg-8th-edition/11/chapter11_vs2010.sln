@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C++ Express 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ch11_OIT", "ch11_OIT\ch11_OIT.vcxproj", "{6C08D84F-06A6-4A8E-B00A-32DB5DA50C96}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ch11_doublewrite", "ch11_doublewrite\ch11_doublewrite.vcxproj", "{713DE7A3-B20A-462F-9E05-344C6C0E7449}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ch11_overdrawcount", "ch11_overdrawcount\ch11_overdrawcount.vcxproj", "{B26AE183-0771-4A93-A607-1D808E50BD7D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6C08D84F-06A6-4A8E-B00A-32DB5DA50C96}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6C08D84F-06A6-4A8E-B00A-32DB5DA50C96}.Debug|Win32.Build.0 = Debug|Win32
+		{6C08D84F-06A6-4A8E-B00A-32DB5DA50C96}.Release|Win32.ActiveCfg = Release|Win32
+		{6C08D84F-06A6-4A8E-B00A-32DB5DA50C96}.Release|Win32.Build.0 = Release|Win32
+		{713DE7A3-B20A-462F-9E05-344C6C0E7449}.Debug|Win32.ActiveCfg = Debug|Win32
+		{713DE7A3-B20A-462F-9E05-344C6C0E7449}.Debug|Win32.Build.0 = Debug|Win32
+		{713DE7A3-B20A-462F-9E05-344C6C0E7449}.Release|Win32.ActiveCfg = Release|Win32
+		{713DE7A3-B20A-462F-9E05-344C6C0E7449}.Release|Win32.Build.0 = Release|Win32
+		{B26AE183-0771-4A93-A607-1D808E50BD7D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B26AE183-0771-4A93-A607-1D808E50BD7D}.Debug|Win32.Build.0 = Debug|Win32
+		{B26AE183-0771-4A93-A607-1D808E50BD7D}.Release|Win32.ActiveCfg = Release|Win32
+		{B26AE183-0771-4A93-A607-1D808E50BD7D}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

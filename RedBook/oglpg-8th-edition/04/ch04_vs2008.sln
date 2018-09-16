@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ch04_shadowmap", "ch04_shadowmap\ch04_shadowmap.vcproj", "{517C26D6-E861-4B89-9F4F-7EF2A2E3AA33}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{517C26D6-E861-4B89-9F4F-7EF2A2E3AA33}.Debug|Win32.ActiveCfg = Debug|Win32
+		{517C26D6-E861-4B89-9F4F-7EF2A2E3AA33}.Debug|Win32.Build.0 = Debug|Win32
+		{517C26D6-E861-4B89-9F4F-7EF2A2E3AA33}.Release|Win32.ActiveCfg = Release|Win32
+		{517C26D6-E861-4B89-9F4F-7EF2A2E3AA33}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
