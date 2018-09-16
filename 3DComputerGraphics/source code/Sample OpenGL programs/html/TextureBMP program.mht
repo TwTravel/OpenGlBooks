@@ -1,0 +1,94 @@
+From: <ÓÉ Microsoft Internet Explorer 5 ±£´æ>
+Subject: TextureBMP program
+Date: Fri, 29 Jan 2010 13:51:58 +0800
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="gb2312"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/TextureBMP/TextureBMP.html
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.5512
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>TextureBMP program</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; charset=3Dgb2312">
+<META content=3D"MSHTML 6.00.2900.5583" name=3DGENERATOR></HEAD>
+<BODY>
+<P=20
+align=3Dcenter><BIG><BIG><BIG><U><STRONG>TextureBMP</STRONG></U></BIG></B=
+IG></BIG></P>
+<P><STRONG>TextureBMP</STRONG> is sample C++ code illustrating the use =
+of=20
+textures in OpenGL. &nbsp; It is intended to accompany the book =
+<EM><STRONG>3D=20
+Computer Graphics: A mathematical approach with OpenGL</STRONG>, </EM>by =
+S.=20
+Buss, Cambridge University Press, 2003. &nbsp; However, it can be used=20
+independently as well.</P>
+<P><STRONG>TextureBMP </STRONG>reads a texture map from a bitmap file=20
+(<STRONG>.bmp</STRONG> extension).&nbsp; Bitmap files can be created =
+with many=20
+standard graphics editting programs, include the PC program=20
+<STRONG>Paint</STRONG>.&nbsp;&nbsp; These programs often allow coverting =
+other=20
+file formats to bitmap images.&nbsp;&nbsp; The main program is in=20
+<STRONG>TextureMap.cpp. &nbsp; </STRONG>The C++ class =
+<STRONG>RgbImage</STRONG>=20
+is used to read the image data from a bitmap file.</P>
+<P>There are several options for downloading the files.=20
+<UL>
+  <LI><A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/TextureBMP/Text=
+ureBMPProject.zip">TextureBMPProject.zip</A>:=20
+  A zip file, including the source files, Microsoft Visual C++ workspace =
+and=20
+  project files, Win32 executable, and a bitmap file..=20
+  <LI><A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/TextureBMP/Text=
+ureBMP.zip">TextureBMP.zip</A>:=20
+  A zip file, with source files, the executable, and the bitmap file..=20
+  <LI><A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/TextureBMP/Text=
+ureBMP.cpp">TextureBMP.cpp</A>=20
+  and <A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/TextureBMP/RgbI=
+mage.cpp">RgbImage.cpp</A>=20
+  and <A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/TextureBMP/RgbI=
+mage.h">RgbImage.h</A>=20
+  and <A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/TextureBMP/Text=
+ureBMP.exe">TextureBMP.exe</A>=20
+  and <A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/TextureBMP/RedL=
+eavesTexture.bmp">RedLeavesTexture.bmp</A>:&nbsp;=20
+  Download the three source files, the executable, and the texture map =
+one at a=20
+  time. </LI></UL>
+<P><STRONG>Things to look at:</STRONG>=20
+<OL>
+  <LI>Compile and run the program.&nbsp; Note how it behaves when the =
+window is=20
+  resized larger and smaller.&nbsp; Do you see an unwanted aliasing =
+problems?=20
+  <LI>Look at how texture coordinates must be explicitly given with=20
+  <STRONG>glTexCoord2f</STRONG> commands as the quad is drawn.=20
+  <LI>The RgbImage class returns the pixels in an array.&nbsp; Each row =
+of the=20
+  array begins on a word boundary (so the rows are padded as necessary =
+to make=20
+  this work).&nbsp; This is what OpenGL expects by default, otherwise, =
+we would=20
+  have had use the <STRONG>glPixelStore</STRONG> command to inform =
+OpenGL about=20
+  the row alignment.=20
+  <LI>Try modifying the program to display the mirror-image of the=20
+  texture.&nbsp; You do not need to modify the texture, just the teture=20
+  coordinates. </LI></OL>
+<P>&nbsp;</P></BODY></HTML>

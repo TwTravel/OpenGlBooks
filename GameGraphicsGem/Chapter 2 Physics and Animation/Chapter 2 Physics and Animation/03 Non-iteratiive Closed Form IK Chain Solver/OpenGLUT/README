@@ -1,0 +1,178 @@
+Portions copyright (C) 2004, the OpenGLUT project contributors.
+OpenGLUT branched from freeglut in February 2004.
+
+    BRIEF OVERVIEW
+    ==============
+
+    If you are building a source package, please read the INSTALLATION
+    section.
+
+    This is the OpenGLUT package.  It is a fork of the old freeglut package.
+    With freeglut aiming for almost bug-for-bug compatibility with old GLUT,
+    OpenGLUT is at liberty to pursue improvements that do not fit into the
+    freeglut charter: OpenGLUT plans to extend the GLUT API in some ways,
+    and to deprecate---and eventually delete---GLUT features that are felt
+    to be poor fits.
+
+    Don't worry: Most GLUT programs are expected to work with OpenGLUT.
+    And any mothballed program should work with old GLUT or freeglut,
+    OpenGLUT is intended to live peacably with freeglut and GLUT, so
+    you should be able to install all three on your system.
+
+
+    PORTS
+    =====
+
+    OpenGLUT is known to work on UNIX-like systems with X servers and
+    GLX.  Tested cases include:
+      * Mandrake/amd64 GNU/LINUX
+      * Mandrake/i386 GNU/LINUX
+      * NetBSD/amd64
+      * NetBSD/i386
+      * CygWIN (on MS-WINDOWS/i386; runs as UNIX_X11)
+ 
+    OpenGLUT is known to work on WIN32 systems.  All features should
+    work with the system as-shipped, however OpenGLUT makes some use of
+    OpenGL interfaces, which may not always be done compatibly with
+    the base WIN32 system.  In particular, one developer has reported
+    that offscreen windows do not work correctly with a particular
+    video card.  We will implement solutions and workarounds as we
+    can.
+
+    At one time, OpenGLUT was believed to work on WINCE systems, as we
+    imported the support.  However, without anyone to maintain the
+    WINCE port, it is possibly---even likely---no longer functional.
+    If you are a WINCE developer and would like a modern GLUT
+    implementation, we'd welcome any help in this area.
+
+    Other ports would be welcome, and if provided the means, might be
+    engaged by existing project members.
+
+
+    INSTALLATION
+    ============
+
+    See the INSTALL file for general information.  Unless noted
+    otherwise, you should have no problems building on any supported
+    system.  If you encounter problems not described in this section,
+    please contact the developers on the OpenGLUT SourceForge project.
+
+    There are no special notes for building with WIN32 systems.
+
+    There are some UNIX_X11 related notes for configuring OpenGLUT:
+
+     * OpenGLUT enables numerous compiler warnings by default.
+       Conceivably, these may give you problems.  If so you may
+       need to supply "--disable-warnings" to the ./configure script.
+       But we would frankly rather hear about such bugs in the code
+       and fix them.
+
+     * For fast compiles, use the --enable-fast ./configure option.
+       OpenGLUT includes lots of material that builds by default
+       but which is not intended to install.  The philosophy behind
+       that is that there are some users who download a source
+       tarball, build it, and then poke around.  This saves them
+       from the chore of typing "cd progs && make".  However, it
+       triples or quadruples the buidtime; if all you want is to
+       build and install the includes, library, and documentation,
+       then you will want --enable-fast.
+
+       Source package systems, such as Blue Wall GNU/LINUX, Gentoo,
+       pkgsrc, ports, etc., generally install by doing effectively:
+
+         make && make install && make clean
+
+       ...so the numerous examples will only be deleted as soon
+       as they are built.
+
+       Use --enable-fast and your users will be happy.
+
+     * ./configure has some bugs.  On some systems you must specify
+       the following (or similar):
+
+           LDFLAGS="-Wl,-R/usr/X11R6/lib" ./configure
+
+       Try without the LDFLAGS setting first.  But if you have troubles
+       running OpenGLUT programs, try configuring with LDFLAGS set to
+       locate your X libraries.  (NetBSD is one notable system where
+       the above is normally required to build and run the demos.)
+
+     * On NetBSD/amd64, the joystick header is not included with the
+       system, though /dev/joy[01] are standard.  You can use the
+       NetBSD/i386 header for the same file.  It is not known if
+       this *works*, but it compiles.
+
+       Update, 20040702: drochner@netbsd.org has corrected this in
+       at least NetBSD-current.  Given that it also affects SDL and
+       others, I (Richard Rauch) expect it to be pulled up into
+       the 2.0 release family.
+
+     * OpenGLUT's gamemode support behaves very differently on some
+       systems.  On XFree86 it uses a non-standard feature to try
+       to change resolutions---but for various reasons, this can
+       be problematic.  On XFree86, therefore, you can disable
+       the resolution change feature with a ./configure parameter:
+
+           --disable-xf86vidmode
+
+       With this option, gamemode should still provide focus-grabbing,
+       making gamemode of some practical use.  (This is also all that
+       OpenGLUT's gamemode will do for you on X other than XFree86.)
+
+       This option is REQUIRED for CygWIN support.  On other systems,
+       it may be REQUIRED or highly desirable.
+
+
+    CONTRIBUTING
+    ============
+
+    Bug reports (including descriptions of missing features) are welcome.
+    So are general comments about the API and new ideas.
+
+    Please try to match the extant code-style.  This includes a 4-space
+    indent (not 2, not 3, not 8) and using ASCII spaces instead of ASCII TABs.
+
+    TABs are forbidden because they expand to varying sizes.  There is no
+    uniform expansion of TABs: 8-space TABs are by far the most common, but
+    4-space TABs are not uncommon and other sizes are not unheard of.
+
+
+    WEB SITE AND CONTACTING THE AUTHOR
+    ==================================
+
+    http://www.openglut.org/
+
+
+    THE HOPE
+    ========
+
+    The OpenGLUT team hopes that you find the project useful.  The following
+    was offered by Pawel, the original author, and owner, of freeglut:
+
+    Hope you find my work somehow useful.
+    Pawel W. Olszta, <olszta@sourceforge.net>
+
+
+    PASSING THE BATON
+    =================
+
+    In late February, 2004, Nigel Stewart and Richard Rauch
+    felt the need to take GLUT in directions that were incompatible
+    with Steve's vision of freeglut.  Hence, OpenGLUT was born.
+
+    A note from Steve, the owner of the freeglut project, regarding
+    his taking over freeglut control:
+
+       In late December 2000, Pawel decided that he no longer
+       wished to maintain freeglut because he has moved out of
+       the graphics field.  I volunteered to take over from him
+       and have been running the project since Jan 13th 2001.
+
+       I'm also the author and maintainer of the PLIB library suite
+       and 'freeglut' really fits in well with that work.
+
+       I just hope I can live up to Pawel's high standards. Pawel
+       remains on the active developers list.
+
+       Steve Baker <sjbaker1@airmail.net>
+                   http://plib.sourceforge.net

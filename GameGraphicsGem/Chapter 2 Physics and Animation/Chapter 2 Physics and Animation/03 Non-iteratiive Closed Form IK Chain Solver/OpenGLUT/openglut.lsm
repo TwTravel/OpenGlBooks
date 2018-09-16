@@ -1,0 +1,14 @@
+Begin3
+Title:          OpenGLUT
+Version:        0.6.3
+Entered-date:   
+Description:    An open source eveolution of the GLUT API.
+Keywords:       GLUT OpenGL 3D X11 WIN32
+Author:         The OpenGLUT contributors (including all freeglut contributors)
+Maintained-by:  The OpenGLUT contributors <openglut-devel@lists.sourceforge.net>
+Primary-site:   http://OpenGLUT.SourceForge.net         
+Home-page:      http://OpenGLUT.SourceForge.net
+Original-site:  
+Platforms:      UNIX-alike, WIN32, WINCE
+Copying-policy: X-Consortium style license
+End

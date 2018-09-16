@@ -1,0 +1,35 @@
+This is the beginnings of a README file.
+
+MathGL++ C++ library:
+--------------------------------------
+
+This build of MathGL++ is at alpha status, keep this in mind.
+If stability is key, download the 0.5 version of MathGL++; it is fairly stable
+and currently has no known bugs.
+
+Known bugs:
+ * FreeBSD 6.* seems to need ./configure CPPFLAGS='-I/usr/X11R6/include' to build properly, for some reason the X11 include are not in the standard includes with XPATH.
+
+What are the experimental parts of this version (0.6.x):
+
+ * Matrix.h:
+    - A row major 2D matrix class for image processing and the like.
+      Currently very unstable, use with caution.
+
+ * LinearPolynomial.h:
+    - A fortran style linear polynomial solver. Very handy for all sorts of
+      optimisation problems. This class should be fairly stable.
+
+ * Cubic polynomials:
+    - There are multiple sorts avialable here. Bezier, Hermite.
+
+
+
+Other languge bindings:
+---------------------------------------
+
+The Python bindings are now in a subfolder named pymathgl.
+
+Build and install MathGL++. Then enter the pymathgl directory.
+Type 'python setup.py build' ,then su to root and type 'python setup.py install'.
+You should then have the Python bindings installed.

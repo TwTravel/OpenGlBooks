@@ -1,0 +1,88 @@
+From: <ÓÉ Microsoft Internet Explorer 5 ±£´æ>
+Subject: SimpleDraw
+Date: Fri, 29 Jan 2010 13:50:40 +0800
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="gb2312"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/SimpleDraw/SimpleDraw.html
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.5512
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>SimpleDraw</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; charset=3Dgb2312">
+<META content=3D"MSHTML 6.00.2900.5583" name=3DGENERATOR></HEAD>
+<BODY>
+<P=20
+align=3Dcenter><BIG><BIG><BIG><U><STRONG>SimpleDraw</STRONG></U></BIG></B=
+IG></BIG></P>
+<P><STRONG>SimpleDraw</STRONG> is sample C code illustrating the use of =
+OpenGL.=20
+&nbsp; It is intended to accompany the book <EM><STRONG>3D Computer =
+Graphics: A=20
+mathematical approach with OpenGL</STRONG>, </EM>by S. Buss, Cambridge=20
+University Press, 2003. &nbsp; However, it can be used independently as=20
+well.</P>
+<P><STRONG>SimpleDraw </STRONG>shows how to draw points, lines, line =
+strips and=20
+line loops.&nbsp;&nbsp; It consists of two source files,=20
+<STRONG>SimpleDraw.c</STRONG> and =
+<STRONG>SimpleDraw.h.</STRONG>&nbsp;&nbsp;=20
+There are several options available for downloading this program:=20
+<UL>
+  <LI><A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/SimpleDraw/Simp=
+leDrawProject.zip">SimpleDrawProject.zip</A>:=20
+  A zip file, including the source files, Microsoft Visual C++ workspace =
+and=20
+  project files, and Win32 executable.=20
+  <LI><A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/SimpleDraw/Simp=
+leDraw.zip">SimpleDraw.zip</A>:=20
+  A zip file, with sources files and the executable.=20
+  <LI><A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/SimpleDraw/Simp=
+leDraw.c">SimpleDraw.c</A>=20
+  and <A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/SimpleDraw/Simp=
+leDraw.h">SimpleDraw.h</A>=20
+  and <A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/SimpleDraw/Simp=
+leDraw.exe">SimpleDraw.exe</A>:&nbsp;=20
+  Download the two source files and the executable, one at a time. =
+</LI></UL>
+<P><STRONG>Things to try out:</STRONG>=20
+<OL>
+  <LI>Compile and run the program.&nbsp; Use the space bar to toggle =
+between the=20
+  five images. &nbsp;&nbsp; Examine the source code and figure out how =
+each of=20
+  the five figures is drawn in the routine <STRONG>drawScene().</STRONG> =
+
+  <LI>Uncomment out the blocks of code in =
+<STRONG>initRendering()</STRONG> and=20
+  recompile and re-run.&nbsp; (First uncomment the first block, then =
+uncomment=20
+  both blocks.)&nbsp; How does this effect what the graphics images look =
+like on=20
+  your computer?=20
+  <LI>Understand the purposes of the call backs that were set up by =
+calls to=20
+  <STRONG>glutKeyboardFunc(), &nbsp; glutReshapeFunc(),&nbsp;=20
+  glutDisplayFunc().</STRONG>&nbsp; Understand what the call to=20
+  <STRONG>glutMainLoop()</STRONG> does.&nbsp; Understand how the program =
+
+  responds to the space bar and the escape key.=20
+  <LI>This program does not use double buffering.&nbsp;&nbsp; Understand =
+what=20
+  this means. &nbsp; What is the purpose of the call to=20
+  <STRONG>glutPostRedisplay()</STRONG> after the mode is changed? =
+</LI></OL>
+<P>Version 1.1 of SimpleDraw, Sept. 28, 2003.&nbsp;&nbsp; <BR>Thanks to =
+Rob=20
+Wilkens for a bug report.</P></BODY></HTML>

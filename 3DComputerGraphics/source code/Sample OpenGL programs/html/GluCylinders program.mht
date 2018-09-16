@@ -1,0 +1,75 @@
+From: <ÓÉ Microsoft Internet Explorer 5 ±£´æ>
+Subject: GluCylinders program
+Date: Fri, 29 Jan 2010 13:53:10 +0800
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="gb2312"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/GluCylinders/GluCylinders.html
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.5512
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>GluCylinders program</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; charset=3Dgb2312">
+<META content=3D"MSHTML 6.00.2900.5583" name=3DGENERATOR></HEAD>
+<BODY>
+<P=20
+align=3Dcenter><BIG><BIG><BIG><U><STRONG>GluCylinders</STRONG></U></BIG><=
+/BIG></BIG></P>
+<P><STRONG>GluCylinders</STRONG> is sample C++ code illustrating how to =
+draw=20
+cylinders and slant cylinders with the gluQuadric routines of OpenGL. =
+&nbsp; It=20
+is intended to accompany the book <EM><STRONG>3D Computer Graphics: A=20
+mathematical approach with OpenGL</STRONG>, </EM>by S. Buss, Cambridge=20
+University Press, 2003. &nbsp; However, it can be used independently as=20
+well.</P>
+<P><STRONG>GluCylinders</STRONG> Draws a cylinder and slant cylinder. =
+The red=20
+cylinder is drawn without any face culling and without any top or bottom =
+disks.=20
+The green cylinder is drawn with back faces culled, and with a top and =
+bottom=20
+disk. </P>
+<P>Arrow keys control the viewpoint. The command "w" toggles wireframe =
+mode, but=20
+since there is no Phong lighting the cylinders look terrible in "Fill" =
+mode.=20
+</P>
+<P>To use these in your own code, just copy out the set of four routines =
+at the=20
+end of <STRONG>GluCylinders.c</STRONG>. The code as written generates =
+cylinders=20
+that have smooth normals. If you need texture coordinates generated, you =
+will=20
+need to call <STRONG>gluQuadricTexture</STRONG>, for this, see the =
+OpenGL=20
+documentation (in the red book, or elsewhere). </P>
+<P>There are several options for downloading the files.
+<UL>
+  <LI><A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/GluCylinders/Gl=
+uCylindersProject.zip">GluCylindersProject.zip</A>:=20
+  A zip file, including the source files, Microsoft Visual C++ workspace =
+and=20
+  project files, and Win32 executable.=20
+  <LI><A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/GluCylinders/Gl=
+uCylinders.zip">GluCylinders.zip</A>:=20
+  A zip file, with source files, and the executable.=20
+  <LI><A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/GluCylinders/Gl=
+uCylinders.c">GluCylinders.c</A>=20
+  and <A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/GluCylinders/Gl=
+uCylinders.h">GluCylinders.h</A>=20
+  and <A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/GluCylinders/Gl=
+uCylinders.exe">GluCylinders.exe</A>:=20
+  &nbsp; Download the two source files and the executable. </LI></UL>
+<P></P></BODY></HTML>

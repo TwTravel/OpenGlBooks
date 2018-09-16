@@ -1,0 +1,110 @@
+From: <ÓÉ Microsoft Internet Explorer 5 ±£´æ>
+Subject: SimpleAnim
+Date: Fri, 29 Jan 2010 13:51:04 +0800
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="gb2312"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/SimpleAnim/SimpleAnim.html
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.5512
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>SimpleAnim</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; charset=3Dgb2312">
+<META content=3D"MSHTML 6.00.2900.5583" name=3DGENERATOR></HEAD>
+<BODY>
+<P=20
+align=3Dcenter><BIG><BIG><BIG><U><STRONG>SimpleAnim</STRONG></U></BIG></B=
+IG></BIG></P>
+<P><STRONG>SimpleAnim</STRONG> is sample C code illustrating the use of =
+OpenGL.=20
+&nbsp; It is intended to accompany the book <EM><STRONG>3D Computer =
+Graphics: A=20
+mathematical approach with OpenGL</STRONG>, </EM>by Samuel R. Buss, =
+Cambridge=20
+University Press, 2003. &nbsp; However, it can be used independently as=20
+well.</P>
+<P><STRONG>SimpleAnim </STRONG>rotates three overlapping =
+triangles.&nbsp;&nbsp;=20
+It consists of two source files, <STRONG>SimpleAnim.c</STRONG> and=20
+<STRONG>SimpleAnim.h.</STRONG>&nbsp;&nbsp; There are several options =
+available=20
+for downloading this program:=20
+<UL>
+  <LI><A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/SimpleAnim/Simp=
+leAnimProject.zip">SimpleAnimProject.zip</A>:=20
+  A zip file, including the source files, Microsoft Visual C++ workspace =
+and=20
+  project files, and Win32 executable.=20
+  <LI><A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/SimpleAnim/Simp=
+leAnim.zip">SimpleAnim.zip</A>:=20
+  A zip file, with sources files and the executable.=20
+  <LI><A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/SimpleAnim/Simp=
+leAnim.c">SimpleAnim.c</A>=20
+  and <A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/SimpleAnim/Simp=
+leAnim.h">SimpleAnim.h</A>=20
+  and <A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/SimpleAnim/Simp=
+leAnim.exe">SimpleAnim.exe</A>:&nbsp;=20
+  Download the two source files and the executable, one at a time. =
+</LI></UL>
+<P><STRONG>Things to try out:</STRONG>=20
+<OL>
+  <LI>Compile and run the program.&nbsp; Try out the keyboard =
+controls.&nbsp;=20
+  Pressing "r" starts and stops the animation.&nbsp; Pressing "s" =
+performs=20
+  single steps of the animation.&nbsp;&nbsp; The up and down arrows =
+control the=20
+  speed of the rotation.=20
+  <LI>Observe aliasing problems with the borders of the triangles.&nbsp; =
+To do=20
+  this enlarge the window for a better view.&nbsp; Then slow down the =
+rotation=20
+  until the triangles are turning slowly.&nbsp; Along the edges of the =
+triangles=20
+  you should see jagged edges and/or movement of pixels.&nbsp; The =
+narrow tips=20
+  of the triangles may look very "jumpy" when observed carefully at slow =
+
+  rotation rates.=20
+  <LI>This program uses double buffering in order to make the animation =
+look=20
+  good. &nbsp; Experiment by changing the program to use single =
+buffering.&nbsp;=20
+  To use single buffering, change the parameter =
+<STRONG>GLUT_DOUBLE</STRONG> to=20
+  <STRONG>GLUT_SINGLE</STRONG> and comment out the call to=20
+  <STRONG>glutSwapBuffers().</STRONG>&nbsp; How does the animation look =
+in=20
+  single buffer mode?=20
+  <LI>Near the beginning of the <STRONG>drawScene</STRONG> routine, the =
+current=20
+  angle is clamped to be less than 360 degrees.&nbsp; What would go =
+wrong if=20
+  this was removed from the code.&nbsp; Try making this change.&nbsp; =
+What goes=20
+  wrong?&nbsp; (To make things go wrong faster, run the simulation at a =
+high=20
+  rate for a little while, then at a low rate: you need to run it long =
+enough to=20
+  let overflow/underflow errors become significant.) &nbsp; Is it what =
+you=20
+  expected?&nbsp; Can you explain what is happening?&nbsp; Similarly, =
+what goes=20
+  wrong if the value of <STRONG>AnimateIncrement</STRONG> is allowed to =
+get too=20
+  large?&nbsp; (Or too small?).=20
+  <LI>Understand how the <STRONG>glTranslatef</STRONG> and=20
+  <STRONG>glRotatef</STRONG> work. &nbsp; These commands are described =
+in=20
+  chapter 2 of the book. </LI></OL></BODY></HTML>

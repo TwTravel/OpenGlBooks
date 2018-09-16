@@ -1,0 +1,85 @@
+From: <ÓÉ Microsoft Internet Explorer 5 ±£´æ>
+Subject: Solar program
+Date: Fri, 29 Jan 2010 13:51:11 +0800
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="gb2312"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/Solar/Solar.html
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.5512
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>Solar program</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; charset=3Dgb2312">
+<META content=3D"MSHTML 6.00.2900.5583" name=3DGENERATOR></HEAD>
+<BODY>
+<P=20
+align=3Dcenter><BIG><BIG><BIG><U><STRONG>Solar</STRONG></U></BIG></BIG></=
+BIG></P>
+<P><STRONG>Solar</STRONG> is sample C code illustrating the use of =
+OpenGL.=20
+&nbsp; It is intended to accompany the book <EM><STRONG>3D Computer =
+Graphics: A=20
+mathematical approach with OpenGL</STRONG>, </EM>by S. Buss, Cambridge=20
+University Press, 2003. &nbsp; However, it can be used independently as=20
+well.</P>
+<P><STRONG>Solar </STRONG>animates a simple solar system, with a sun, a =
+single=20
+planet and a single moon.&nbsp;&nbsp; It consists of two source files,=20
+<STRONG>Solar.c</STRONG> and <STRONG>Solar.h.</STRONG>&nbsp;&nbsp; There =
+are=20
+several options available for downloading this program:=20
+<UL>
+  <LI><A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/Solar/SolarProj=
+ect.zip">SolarProject.zip</A>:=20
+  A zip file, including the source files, Microsoft Visual C++ workspace =
+and=20
+  project files, and Win32 executable.=20
+  <LI><A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/Solar/Solar.zip=
+">Solar.zip</A>:=20
+  A zip file, with sources files and the executable.=20
+  <LI><A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/Solar/Solar.c">=
+Solar.c</A>=20
+  and <A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/Solar/Solar.h">=
+Solar.h</A>=20
+  and <A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/Solar/Solar.exe=
+">Solar.exe</A>:&nbsp;=20
+  Download the two source files and the executable, one at a time. =
+</LI></UL>
+<P><STRONG>Things to try out:</STRONG>=20
+<OL>
+  <LI>Compile and run the program.&nbsp; Test out the keyboard =
+controls.&nbsp;=20
+  When it first starts, aliasing causes the planet to appear to not be =
+rotating,=20
+  but instead always keeping the same face to the sun.&nbsp;&nbsp; Slow =
+down the=20
+  animation (arrow keys) to see the "true" motion.&nbsp; Figure out how =
+the=20
+  animation code works (refer to chapter 2 of the above-mentioned book). =
+
+  <LI>If you didn't already do this with the <STRONG>SimpleAnim</STRONG> =
+
+  program, try changing the program to use single buffering, and observe =
+the=20
+  results.=20
+  <LI>Build a more complicated solar system, by doing the solar system =
+exercise=20
+  from chapter 2 of the book (page XXX).=20
+  <LI>The perspective view is set up poorly for some situations.&nbsp; =
+Try, for=20
+  instance, making a tall skinny window; note that the solar system is =
+no longer=20
+  fully visible. &nbsp; Rewrite the <STRONG>ResizeWindow</STRONG> =
+routine to fix=20
+  this problem. </LI></OL></BODY></HTML>

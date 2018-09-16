@@ -1,0 +1,35 @@
+Portions copyright (C) 2004, OpenGLUT project contributors.
+OpenGLUT branched from freeglut in February 2004.
+
+	The freeglut ChangeLog was an exhaustive grind of all changes that
+	were ever made.  The freeglut history has been lopped off, as
+	it is available from the freeglut project.  The OpenGLUT history
+	is more terse, since we assume either direct CVS access, or
+	else a web-browser by which you can peruse the CVS repository on
+	SourceForge.
+
+***************************************************************************
+* Changes up to February 27, 2004.
+***************************************************************************
+
+	(1) GLUT_UNMANAGED added.  Tested on both UNIX_X11 and WIN32.
+	This was actually created before the fork, but was never
+	contributed to freeglut.  Instead, the codebase that had this
+	feature wound up becoming the fork.
+
+	(2) Created OpenGLUT fork.
+
+**********************************************
+* Changes up to 20040320
+**********************************************
+
+	(4) Imported changes to freeglut since Feb. 20.
+
+	(5) More updates from freeglut, including WINCE support.
+
+*************************
+* 20040405
+*************************
+
+	(6) Major documentation enhancements.  Numerous bugfixes.
+	Man-pages now install properly.  First release.

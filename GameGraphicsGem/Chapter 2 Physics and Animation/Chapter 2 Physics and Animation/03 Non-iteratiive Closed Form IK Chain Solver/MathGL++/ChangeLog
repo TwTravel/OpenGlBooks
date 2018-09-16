@@ -1,0 +1,147 @@
+2005-01-19  <>
+	Added support for OSX and Win32. Also fixed some bugs in configure etc  
+
+2005-01-13  <>
+	Added VCpp6 build file. Corrected some includes for Win.  
+
+2005-01-12  <>
+	Fixed error in sse code. 
+
+2005-01-12  <>
+	Improved the sse code int GLMatrix. 
+
+2005-01-12  <>
+	Added SSE instructions to GLMatrix as well. 
+
+2005-01-12  <>
+	Added some SSE optimisations in GLVector, mainly as a test. 
+
+2005-01-12  <>
+	Fixing API inconsistencies in GLVector* classes. Should improve speed as well. 
+
+2005-01-12  <>
+	Rigged for release + added reciprocal optimization for operator/ 
+
+-- Version 0.5 pre1
+
+   This is a 0.5 pre-release snapshot of current development. It has not been thoroughly tested, there is still no MS package. Next time I promise... :-)
+   0.5 will mainly be a feature add release moving towards hopefully a beta stage in 1.0.
+   Increased ease of use and more features is thus the basic gist of it :-).
+   Don't forget to send in bug reports to the SF.net site.
+ 
+2005-01-10  <>
+	Added GLMatrix determinant, cofactors & adjoint. 
+	Added GLQuaternion to GLMatrix conversion. 
+	Added GLMatrix equality check & element access. 
+	Added <iostream> interface for GLMatrix. 
+	Added unittest for GLMatrix. 
+	 
+
+2004-11-13  <>
+	Added documentation to the GLQuaternion class. 
+
+-- Version 0.4
+
+  The main change is for Unix users. The default include prefix is now include/MathGL++ and
+  there is now a mathglpp-config script that should be used for c & linker flags.
+  There is still no MSVisualC++ project for this package but users have reported success with
+  just including the files directly in their own project. Since this software library is licensed under
+  the LGPL that is totally OK.
+
+  GLPlane has been added.
+    - Plane shadow matrix to come.
+
+  Quaternions are up to a good standard now.
+
+  BernsteinPolynomials are in and working though maybe not as fast as they should.
+    - Cubic spline specialisation to come.
+
+  Matrix has gotten many improvments thanks to Sebastien Bloc (his details are in the CONTRIBUTORS file)
+  as well as the Vector class.
+
+  Enjoy. Jacques.
+
+CVS log between version 0.3 and 0.4:
+
+2004-11-05  <>
+    Implemented more of Sebastien Bloc's patch and fixed error in applyTranslate.
+
+2004-11-05  <>
+    Fixed bug in loadOrtho and added Quaternion unit method and Matrix view matrix method.
+
+2004-11-03  <>
+    Changed order in change log
+
+2004-11-03  <>
+    Added GLPlane.
+
+2004-11-03  <>
+    Added mathglpp-config script and fixed ifdef problem with mathgl_pp for users without SDL.
+
+2004-11-03  <>
+    Moving the include prefix to include/MathGL++
+
+2004-11-01  <>
+    Added changes from Sebastien Bloc and optimized vector and matrix routines.
+
+
+-- Version 0.3
+
+  The API for GLVector has changed slightly.
+  The dimension is no longer a template argument. There are now 3 Vector classes,
+  GLVector2, GLVector3 and GLVector4. This was due to minor differences between the
+  classes that made the classes less usable as a generic type.
+  Constructors and set methods are now easier to use.
+
+  Also the specialisations are now in a lib to avoid multiple definition errors.
+  So to use MathGL++ now you must add -lmathglpp to your LDFLAGS (or whatever you use).
+
+  Some more fixes as well.
+
+  Vector:
+    + multiply and divide by scalar.
+    + cross product.
+    + GLfloat instead of float and GLdouble instead of double.
+
+  Quaternion: in pre-release stage.
+
+  Plane: in pre-release stage
+
+-- Version 0.2
+
+  This second release of MathGL++ contains the same as version 0.1 with some bugfixes.
+
+  Additions:
+
+   Matrix:
+    + transpose.
+    + vectored vertex submission for top-speed software transforms.
+    + fixed some minor bugs.
+
+  Also, the example is now a bit more exciting, showing off a bit more of MathGL++.
+
+-- Version 0.1
+
+  This is a first release of MathGL++. It contains a vector and a matrix class.
+
+  Features:
+
+   Matrix: All complete except for
+    - eigenvalue/eigenvector calculation.
+    - transpose
+    - adjoint etc.
+    - inverse.
+    - determinant
+
+   Vector: All done.
+
+   Quaternion: Not in yet.
+
+   Plane: Not in yet.
+
+   Polynomials: Not in yet.
+
+  This project is distributed under the GNU Library General Public License.
+It is a condition that you read and agree to the terms within it before using
+this project. Please consult the file "COPYING.LIB" for the GNU LGPL.
+

@@ -1,0 +1,87 @@
+From: <ÓÉ Microsoft Internet Explorer 5 ±£´æ>
+Subject: ConnectDots program
+Date: Fri, 29 Jan 2010 13:51:20 +0800
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="gb2312"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/ConnectDots/ConnectDots.html
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.5512
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>ConnectDots program</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; charset=3Dgb2312">
+<META content=3D"MSHTML 6.00.2900.5583" name=3DGENERATOR></HEAD>
+<BODY>
+<P=20
+align=3Dcenter><BIG><BIG><BIG><U><STRONG>ConnectDots</STRONG></U></BIG></=
+BIG></BIG></P>
+<P><STRONG>ConnectDots</STRONG> is sample C code illustrating the use of =
+OpenGL.=20
+&nbsp; It is intended to accompany the book <EM><STRONG>3D Computer =
+Graphics: A=20
+mathematical approach with OpenGL</STRONG>, </EM>by S. Buss, Cambridge=20
+University Press, 2003. &nbsp; However, it can be used independently as=20
+well.</P>
+<P><STRONG>ConnectDots </STRONG>allows the user to specify points with =
+mouse=20
+clicks. &nbsp; The points are drawn connected with straight lines.=20
+&nbsp;&nbsp;This illustrates how the OpenGL GLUT routines can be used to =
+capture=20
+mouse clicks.&nbsp; The C code consists of two source files,=20
+<STRONG>ConnectDots.c</STRONG> and =
+<STRONG>ConnectDots.h.</STRONG>&nbsp;&nbsp;=20
+There are several options available for downloading this program:=20
+<UL>
+  <LI><A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/ConnectDots/Con=
+nectDotsProject.zip">ConnectDotsProject.zip</A>:=20
+  A zip file, including the source files, Microsoft Visual C++ workspace =
+and=20
+  project files, and Win32 executable.=20
+  <LI><A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/ConnectDots/Con=
+nectDots.zip">ConnectDots.zip</A>:=20
+  A zip file, with sources files and the executable.=20
+  <LI><A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/ConnectDots/Con=
+nectDots.c">ConnectDots.c</A>=20
+  and <A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/ConnectDots/Con=
+nectDots.h">ConnectDots.h</A>=20
+  and <A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/ConnectDots/Con=
+nectDots.exe">ConnectDots.exe</A>:&nbsp;=20
+  Download the two source files and the executable, one at a time. =
+</LI></UL>
+<P><STRONG>Things to try out:</STRONG>=20
+<OL>
+  <LI>Compile and run the program.&nbsp; Test out the keyboard =
+controls.&nbsp;=20
+  The left mouse button adds a point.&nbsp; The commands "f" and =
+"l"&nbsp;=20
+  remove the first and last point from the list of points =
+(respectively).&nbsp;=20
+  If you go over 64 points, the first point(s) are removed.=20
+  <LI>Observe how the program uses an OpenGL GLUT callback to capture =
+mouse=20
+  clicks and determine their&nbsp; x and y&nbsp; locations.=20
+  <LI>Experiment with turning off and on (a) the thick lines and points, =
+(b) the=20
+  anti-aliasing.&nbsp; What difference does this make to the appearance =
+and the=20
+  speed of the graphics?&nbsp; Your results may vary widely depending on =
+your=20
+  implementation of OpenGL.=20
+  <LI>MAJOR PROJECT: write a program that generates Catmull-Rom splines =
+or=20
+  Overhauser splines that interpolate the dots.&nbsp; Do something =
+appropriate=20
+  at the endpoints to make the first and last points be interpolated. =
+</LI></OL>
+<P>&nbsp;</P></BODY></HTML>

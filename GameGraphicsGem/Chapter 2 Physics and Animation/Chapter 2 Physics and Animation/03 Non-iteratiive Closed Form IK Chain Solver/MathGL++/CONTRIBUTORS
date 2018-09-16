@@ -1,0 +1,15 @@
+Sebastien Bloc:
+    sebastien.bloc@free.fr
+    sourceforge user name: "alkaine"
+    sourceforge project:
+         "3D controls" http://sourceforge.net/projects/winlang3d/
+    website: http://mignonsoft.free.fr
+
+    Contributed:
+        in GLMatrix & GLVector:
+             Converted m array into an anonymous union and struct whereby
+             the matrix and vector elements are accessible as [] or by name.
+             Empirical evidence shows a 20% speed up is possible.
+        in GLMatrix:
+             Added applyRotateX, applyRotateY, applyRotateZ, applyRotateXYZ methods.
+

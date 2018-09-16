@@ -1,0 +1,135 @@
+From: <ÓÉ Microsoft Internet Explorer 5 ±£´æ>
+Subject: SimpleNurbs program
+Date: Fri, 29 Jan 2010 13:53:17 +0800
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="gb2312"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/SimpleNurbs/SimpleNurbs.html
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.5512
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>SimpleNurbs program</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; charset=3Dgb2312">
+<META content=3D"MSHTML 6.00.2900.5583" name=3DGENERATOR></HEAD>
+<BODY>
+<P=20
+align=3Dcenter><U><STRONG><BIG><BIG><BIG>SimpleNurbs</BIG></BIG></BIG><BR=
+></STRONG></U><EM>A=20
+program that draws a rational Bezier patch.</EM></P>
+<P><STRONG>SimpleNurbs</STRONG> is a C program illustrating the use of =
+OpenGL.=20
+&nbsp; It is intended to accompany the book <EM><STRONG>3D Computer =
+Graphics: A=20
+mathematical approach with OpenGL</STRONG>, </EM>by S. Buss, Cambridge=20
+University Press, 2003. &nbsp; However, it can be used independently as=20
+well.</P>
+<P><STRONG>SimpleNurbs </STRONG>draws a single rational Bezier =
+patch.&nbsp; As=20
+such, it is somewhat misleadingly named: it might have better been =
+called=20
+"SimpleRationalBezier", but that seemed to be too awkawrd a =
+name.&nbsp;&nbsp;=20
+The C code consists of two source files, <STRONG>SimpleNurbs.c</STRONG> =
+and=20
+<STRONG>SimpleNurbs.h.</STRONG>&nbsp;&nbsp; There are several options =
+available=20
+for downloading this program:=20
+<UL>
+  <LI><A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/SimpleNurbs/Sim=
+pleNurbsProject.zip">SimpleNurbsProject.zip</A>:=20
+  A zip file, including the source files, Microsoft Visual C++ workspace =
+and=20
+  project files, and Win32 executable.=20
+  <LI><A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/SimpleNurbs/Sim=
+pleNurbs.zip">SimpleNurbs.zip</A>:=20
+  A zip file, with sources files and the executable.=20
+  <LI><A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/SimpleNurbs/Sim=
+pleNurbs.c">SimpleNurbs.c</A>=20
+  and <A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/SimpleNurbs/Sim=
+pleNurbs.h">SimpleNurbs.h</A>=20
+  and <A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/SimpleNurbs/Sim=
+pleNurbs.exe">SimpleNurbs.exe</A>:&nbsp;=20
+  Download the two source files and the executable, one at a time. =
+</LI></UL>
+<P><STRONG>Things to try out:</STRONG>=20
+<OL>
+  <LI>Compile and run the program.&nbsp; There a number of keyboard=20
+  controls<STRONG>:</STRONG>
+  <OL type=3Da>
+    <LI>Press arrow keys (left, right, up and down) to make the patch =
+rotate.=20
+    <LI>Press "s" to single step the animation,=20
+    <LI>Press "a" to start the animation running again without =
+stopping.&nbsp;=20
+    (Undoes the "s" effect.)=20
+    <LI>Press "r" to reset the patch back to its original orientation =
+with no=20
+    velocity.=20
+    <LI>Press "0" (zero) to zero the velocity of the patch, but leave =
+its=20
+    position fixed.=20
+    <LI>Press "p" to toggle between rendering in filled polygon mode, =
+and in=20
+    wireframe mode.=20
+    <LI>Press "f" to toggle between flat shading and smooth shading.=20
+    <LI>Press "U" to increase the patch resolution in the "u" direction. =
+
+    <LI>Press "u" to decrease the patch resolution in the "u" direction. =
+
+    <LI>Press "V" to increase the patch resolution in the "v" direction. =
+
+    <LI>Press "v" to decrease the patch resolution in the "v" direction. =
+
+</LI></OL>
+  <LI>Experiment with increasing the resolution of the mesh (controls =
+"U" and=20
+  V").&nbsp; Note how the specular highlights become better defined as =
+the=20
+  resolution increases.&nbsp;&nbsp; Examine the code and see how the =
+patch=20
+  resolution is increased and decreased.=20
+  <LI>The crosssections of the Bezier patch are perfectly =
+circular.&nbsp; This=20
+  is possible only with rational Bezier patches: review the theory in =
+Chapter 7,=20
+  and compare to how it is implemented in the program.&nbsp;=20
+  <LI>The program uses Bezier patches of order 4x4 or of order =
+3x4.&nbsp; As=20
+  initially setup, it uses order 4x4.&nbsp; Thus, its circular cross =
+sections=20
+  are defined with four control points: the middle control points have =
+weight=20
+  1/3.=20
+  <LI>Try changing the variable&nbsp; USE_CNTLPT_AT_INFINITY to have =
+value 1=20
+  instead of 0. &nbsp; This changes the program so that it uses a Bezier =
+patch=20
+  of order 3x4 (order 3 in u, order v in v).&nbsp; Now the circular=20
+  crosssections are semicircles defined with order three Bezier curves, =
+and thus=20
+  use control points which are points at infinity.=20
+  <LI>You should be able to see specular highlights and other Phong =
+lighting=20
+  effects on both sides of the Bezier patch.&nbsp; Is this true for =
+you?&nbsp; I=20
+  had to set the "Front Face" option to "clockwise", with=20
+  <STRONG>glFrontFace(GL_CW)</STRONG>. &nbsp;&nbsp; This doesn't seem =
+like it=20
+  should have been necessary --- is this a standard OpenGL feature or a =
+bug in=20
+  OpenGL on my PC?&nbsp; (Any experts out there?&nbsp; Please let me =
+know.)=20
+</LI></OL>
+<P align=3Dleft>&nbsp;</P>
+<P>&nbsp;</P></BODY></HTML>

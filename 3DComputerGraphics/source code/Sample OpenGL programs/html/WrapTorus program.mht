@@ -1,0 +1,106 @@
+From: <ÓÉ Microsoft Internet Explorer 5 ±£´æ>
+Subject: WrapTorus program
+Date: Fri, 29 Jan 2010 13:51:41 +0800
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="gb2312"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/WrapTorus/WrapTorus.html
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.5512
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>WrapTorus program</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; charset=3Dgb2312">
+<META content=3D"MSHTML 6.00.2900.5583" name=3DGENERATOR></HEAD>
+<BODY>
+<P=20
+align=3Dcenter><BIG><BIG><BIG><U><STRONG>WrapTorus</STRONG></U></BIG></BI=
+G></BIG></P>
+<P><STRONG>WrapTorus</STRONG> is a C program illustrating the use of =
+OpenGL.=20
+&nbsp; It is intended to accompany the book <EM><STRONG>3D Computer =
+Graphics: A=20
+mathematical approach with OpenGL</STRONG>, </EM>by S. Buss, Cambridge=20
+University Press, 2003. &nbsp; However, it can be used independently as=20
+well.</P>
+<P><STRONG>WrapTorus </STRONG>draws a torus in a non-standard way, as a =
+ribbon=20
+of quad strips that wrap around the torus in one long strip.&nbsp; The C =
+code=20
+consists of two source files, <STRONG>WrapTorus.c</STRONG> and=20
+<STRONG>WrapTorus.h.</STRONG>&nbsp;&nbsp; There are several options =
+available=20
+for downloading this program:=20
+<UL>
+  <LI><A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/WrapTorus/WrapT=
+orusProject.zip">WrapTorusProject.zip</A>:=20
+  A zip file, including the source files, Microsoft Visual C++ workspace =
+and=20
+  project files, and Win32 executable.=20
+  <LI><A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/WrapTorus/WrapT=
+orus.zip">WrapTorus.zip</A>:=20
+  A zip file, with sources files and the executable.=20
+  <LI><A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/WrapTorus/WrapT=
+orus.c">WrapTorus.c</A>=20
+  and <A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/WrapTorus/WrapT=
+orus.h">WrapTorus.h</A>=20
+  and <A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/WrapTorus/WrapT=
+orus.exe">WrapTorus.exe</A>:&nbsp;=20
+  Download the two source files and the executable, one at a time. =
+</LI></UL>
+<P><STRONG>Things to try out:</STRONG>=20
+<OL>
+  <LI>Compile and run the program.&nbsp; Test out the keyboard =
+controls.&nbsp;=20
+  <OL type=3Da>
+    <LI>Press arrow keys (left, right, up and down) to make the torus =
+rotate.=20
+    <LI>Press "s" to single step the animation,=20
+    <LI>Press "a" to start the animation running again without =
+stopping.&nbsp;=20
+    (Undoes the "s" effect.)=20
+    <LI>Press "r" to reset the torus back to its original orientation =
+with no=20
+    velocity.=20
+    <LI>Press "0" (zero) to zero the velocity of the torus, but leave =
+its=20
+    position fixed.=20
+    <LI>Press "W" to increase the number of wraps,&nbsp; "w" to decrease =
+the=20
+    number of wraps.=20
+    <LI>Press "N" to increase the number of segments per wrap.&nbsp; "n" =
+to=20
+    decrease the number of segments per wrap.=20
+    <LI>Press "q" to toggle between drawing quadrangles and triangles.=20
+    <LI>Press "p" to toggle between rendering in filled polygon mode, =
+and in=20
+    wireframe mode. </LI></OL>
+  <LI>Observe how bad the torus looks in "filled polygon" mode. =
+(Keyboard=20
+  control: "p".)&nbsp; This will be improved by the =
+<STRONG>LightTorus</STRONG>=20
+  program with the addition of material properties and Phong =
+lighting.&nbsp;=20
+  <LI>Examine the source code to see how the torus is generated.&nbsp; =
+In=20
+  particular, note that integer variables are used to control the loops =
+that=20
+  draw the vertices on the torus, and we are careful when revisiting a =
+vertex to=20
+  calculate the x,y,z coordinates of the vertex by exactly the same =
+floating=20
+  point calculation as the first time.&nbsp; This avoids having small,=20
+  pixel-size holes in the torus, as can occur due to floating point =
+roundoff=20
+  (see the last section of Chapter 2 of the above book). </LI></OL>
+<P>&nbsp;</P></BODY></HTML>

@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual C++ Express 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mathglpp", "mathglpp.vcproj", "{8CB3299A-4558-44EC-AC09-43209A4B3CFA}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "shadow", "msvc8\shadow\shadow.vcproj", "{582F73A7-8014-46EB-A0F1-4463AD55950E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8CB3299A-4558-44EC-AC09-43209A4B3CFA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{8CB3299A-4558-44EC-AC09-43209A4B3CFA}.Debug|Win32.Build.0 = Debug|Win32
+		{8CB3299A-4558-44EC-AC09-43209A4B3CFA}.Release|Win32.ActiveCfg = Release|Win32
+		{8CB3299A-4558-44EC-AC09-43209A4B3CFA}.Release|Win32.Build.0 = Release|Win32
+		{582F73A7-8014-46EB-A0F1-4463AD55950E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{582F73A7-8014-46EB-A0F1-4463AD55950E}.Debug|Win32.Build.0 = Debug|Win32
+		{582F73A7-8014-46EB-A0F1-4463AD55950E}.Release|Win32.ActiveCfg = Release|Win32
+		{582F73A7-8014-46EB-A0F1-4463AD55950E}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

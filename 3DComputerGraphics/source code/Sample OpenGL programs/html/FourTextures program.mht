@@ -1,0 +1,94 @@
+From: <ÓÉ Microsoft Internet Explorer 5 ±£´æ>
+Subject: FourTextures program
+Date: Fri, 29 Jan 2010 13:52:06 +0800
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="gb2312"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/FourTextures/FourTextures.html
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.5512
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>FourTextures program</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; charset=3Dgb2312">
+<META content=3D"MSHTML 6.00.2900.5583" name=3DGENERATOR></HEAD>
+<BODY>
+<P=20
+align=3Dcenter><BIG><BIG><BIG><U><STRONG>FourTextures</STRONG></U></BIG><=
+/BIG></BIG></P>
+<P><STRONG>FourTextures</STRONG> is sample C++ code illustrating the use =
+of=20
+multiple textures in OpenGL. &nbsp; It is intended to accompany the book =
+
+<EM><STRONG>3D Computer Graphics: A mathematical approach with =
+OpenGL</STRONG>,=20
+</EM>by S. Buss, Cambridge University Press, 2003. &nbsp; However, it =
+can be=20
+used independently as well.</P>
+<P><STRONG>FourTextures</STRONG> reads four texture map from a bitmap =
+file=20
+(<STRONG>.bmp</STRONG> extension).&nbsp;&nbsp; The main program is in=20
+<STRONG>TextureMap.cpp. &nbsp; </STRONG>The C++ class =
+<STRONG>RgbImage</STRONG>=20
+is used to read the images' data from a bitmap files.</P>
+<P>There are several options for downloading the files.=20
+<UL>
+  <LI><A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/FourTextures/Fo=
+urTexturesProject.zip">FourTexturesProject.zip</A>:=20
+  A zip file, including the source files, Microsoft Visual C++ workspace =
+and=20
+  project files, Win32 executable, and a bitmap file..=20
+  <LI><A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/FourTextures/Fo=
+urTextures.zip">FourTextures.zip</A>:=20
+  A zip file, with sources files, the executable, and the four bitmap =
+files.=20
+  <LI><A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/FourTextures/Fo=
+urTextures.cpp">FourTextures.cpp</A>=20
+  and <A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/FourTextures/Rg=
+bImage.cpp">RgbImage.cpp</A>=20
+  and <A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/FourTextures/Rg=
+bImage.h">RgbImage.h</A>=20
+  and <A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/FourTextures/Fo=
+urTextures.exe">FourTextures.exe</A>=20
+  and <A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/FourTextures/Iv=
+yTexture.bmp">IvyTexture.bmp</A>=20
+  and <A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/FourTextures/Wo=
+odGrain.bmp">WoodGrain.bmp</A>=20
+  &nbsp; and <A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/FourTextures/Li=
+ghtningTexture.bmp">LightningTexture.bmp</A>=20
+  and <A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/FourTextures/Re=
+dLeavesTexture.bmp">RedLeavesTexture.bmp</A>:&nbsp;=20
+  Download the three source files, the executable, and the four texture =
+maps one=20
+  at a time. </LI></UL>
+<P><STRONG>Things to look at:</STRONG>=20
+<OL>
+  <LI>Compile and run the program.&nbsp; Note how it behaves when the =
+window is=20
+  resized larger and smaller.&nbsp; Do you see any unwanted aliasing =
+problems?=20
+  <LI>Examine the code and figure out how to use OpenGL to manage =
+multiple=20
+  textures. </LI></OL>
+<P>&nbsp;</P>
+<P>&nbsp;</P></BODY></HTML>

@@ -1,0 +1,126 @@
+dnl Portions copyright (C) 2004, the OpenGLUT contributors.
+dnl OpenGLUT branched from freeglut in Feburary, 2004.
+dnl Process this file with autoconf to produce a configure script.
+AC_INIT(Makefile.am)
+
+AM_INIT_AUTOMAKE(openglut,0.6.3)
+AM_CONFIG_HEADER(config.h)
+
+dnl Checks for programs.
+AC_PROG_CC
+AC_C_CONST
+AC_EXEEXT
+AC_LIBTOOL_DLOPEN
+AM_PROG_LIBTOOL
+AC_SUBST(LIBTOOL_DEPS)
+
+dnl Checks for libraries.
+AC_PATH_XTRA
+
+AC_CHECK_LIB(Xxf86vm,XF86VidModeSwitchToMode,
+	LIBXXF86VM=-lXxf86vm,LIBXXF86VM=,$X_LIBS -lXext -lX11)
+AC_SUBST(LIBXXF86VM)
+
+AC_CHECK_LIB(usbhid,hid_get_report_desc)
+
+dnl Checks for header files.
+AC_STDC_HEADERS
+AC_HAVE_HEADERS( GL/gl.h GL/glu.h GL/glx.h usbhid.h )
+
+save_CFLAGS="$CFLAGS"
+CFLAGS="$CFLAGS $X_CFLAGS"
+AC_CHECK_HEADERS(X11/extensions/xf86vmode.h,,,[#include <X11/Xlib.h>])
+CFLAGS="$save_CFLAGS"
+
+dnl Checks for typedefs, structures, and compiler characteristics.
+
+dnl Checks for library functions.
+
+AC_CHECK_LIBM
+AC_SUBST(LIBM)
+
+dnl Build time configuration
+AC_ARG_ENABLE(xf86vidmode,
+[  --disable-xf86vidmode   Do not try to use the XFree86 vid. mode extension],
+if test "x$enable_xf86vidmode" = xno
+then
+    DELETE_XF86VIDMODE='yes'
+else
+    DELETE_XF86VIDMODE='no'
+fi,
+DELETE_XF86VIDMODE='no'
+)
+AC_OUTPUT_COMMANDS([
+if test "x$DELETE_XF86VIDMODE" = xyes
+then
+   (echo '/HAVE_X11_EXTENSIONS_XF86VMODE_H/s/^.*$/#undef HAVE_X11_EXTENSIONS_XF86VMODE_H/' ; echo 'w' ; echo 'q' ) | ed config.h
+   echo '#ifdef HAVE_X11_EXTENSIONS_XF86VMODE_H' >>config.h
+   echo '#undef HAVE_X11_EXTENSIONS_XF86VMODE_H' >>config.h
+   echo '#endif' >>config.h
+fi
+],
+DELETE_XF86VIDMODE=$DELETE_XF86VIDMODE)
+
+AC_ARG_ENABLE(replace-glut,
+[  --replace-glut  Coexist with existing glut library])
+if test "x$replace_glut" != xyes
+then
+ LIBRARY=openglut
+ HEADER=
+else
+ LIBRARY=glut
+ HEADER=glut.h
+fi
+AC_SUBST(LIBRARY)
+AC_SUBST(HEADER)
+
+AC_ARG_ENABLE(warnings,
+[  --disable-warnings       Enable gcc compiler warnings],
+if test "x$enable_warnings" = xno
+then
+    echo DISABLING many compiler warnings.
+    CFLAGS="-w"
+else
+    CFLAGS="$CFLAGS -Wall -Wno-parentheses -Werror -Wstrict-prototypes -Wfloat-equal -Wundef -Wendif-labels -Wpointer-arith -Wbad-function-cast -Wcast-align -Wsign-compare -Wredundant-decls -std=c99"
+fi,
+CFLAGS="-w"
+)
+
+AC_ARG_ENABLE(fast,
+[  --enable-fast   Omit building things that are not installed.],
+if test "x$enable_fast" = xyes
+then
+  echo "(FAST) Building only installable components."
+  OG_EXTRA_BUILD=""
+else
+  echo "(SLOW) Building installable and non-installable components."
+  OG_EXTRA_BUILD="progs"
+fi,
+echo "(SLOW) Building installable and non-installable by default."
+OG_EXTRA_BUILD="progs"
+)
+AC_SUBST(OG_EXTRA_BUILD)
+
+
+AC_OUTPUT(\
+	Makefile \
+	doc/Makefile \
+	progs/Makefile \
+	progs/demos/Makefile \
+	progs/demos/CallbackMaker/Makefile \
+	progs/demos/Fractals/Makefile \
+	progs/demos/Fractals_random/Makefile \
+	progs/demos/Lorenz/Makefile \
+	progs/demos/One/Makefile \
+	progs/demos/fonts/Makefile \
+	progs/demos/joystick/Makefile \
+	progs/demos/offscreen/Makefile \
+	progs/demos/shapes/Makefile \
+	progs/demos/unmanaged/Makefile \
+	progs/redbook/Makefile \
+	progs/tests/Makefile \
+	progs/tests/fonts/Makefile \
+	src/Makefile \
+	include/Makefile \
+	include/GL/Makefile \
+	)

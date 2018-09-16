@@ -1,0 +1,132 @@
+From: <ÓÉ Microsoft Internet Explorer 5 ±£´æ>
+Subject: LightTorus program
+Date: Fri, 29 Jan 2010 13:52:53 +0800
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="gb2312"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/TextureTorus/TextureTorus.html
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.5512
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>LightTorus program</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; charset=3Dgb2312">
+<META content=3D"MSHTML 6.00.2900.5583" name=3DGENERATOR></HEAD>
+<BODY>
+<P=20
+align=3Dcenter><BIG><BIG><BIG><U><STRONG>TextureTorus</STRONG></U></BIG><=
+/BIG></BIG></P>
+<P><STRONG>TextureTorus</STRONG> is a C++ program illustrating the use =
+of=20
+OpenGL. &nbsp; It is intended to accompany the book <EM><STRONG>3D =
+Computer=20
+Graphics: A mathematical approach with OpenGL</STRONG>, </EM>by S. Buss, =
+
+Cambridge University Press, 2003. &nbsp; However, it can be used =
+independently=20
+as well.</P>
+<P><STRONG>TextureTorus </STRONG>draws a torus in a non-standard way, as =
+a=20
+ribbon of quad strips that wrap around the torus in one long =
+strip.&nbsp; The C=20
+code consists of two source files, <STRONG>TextureTorus.cpp</STRONG> and =
+
+<STRONG>TextureTorus.h.</STRONG>&nbsp;&nbsp; There are several options =
+available=20
+for downloading this program:=20
+<UL>
+  <LI><A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/TextureTorus/Te=
+xtureTorusProject.zip">TextureTorusProject.zip</A>:=20
+  A zip file, including the source files, Microsoft Visual C++ workspace =
+and=20
+  project files, and Win32 executable.=20
+  <LI><A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/TextureTorus/Te=
+xtureTorus.zip">TextureTorus.zip</A>:=20
+  A zip file, with sources files and the executable.=20
+  <LI><A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/TextureTorus/Te=
+xtureTorus.cpp">TextureTorus.cpp</A>=20
+  and <A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/TextureTorus/Te=
+xtureTorus.h">TextureTorus.h</A>=20
+  and <A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/TextureTorus/Te=
+xtureTorus.exe">TextureTorus.exe</A>=20
+  and <A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/TextureTorus/Wo=
+odGrain.bmp">WoodGrain.bmp</A>:&nbsp;=20
+  Download the two source files, the executable, and the bitmapped =
+texture, one=20
+  at a time. </LI></UL>
+<P><STRONG>Things to try out:</STRONG>=20
+<OL>
+  <LI>Before running <STRONG>TextureTorus,</STRONG> you should try out =
+the=20
+  simpler <A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/WrapTorus/WrapT=
+orus.html"><STRONG>WrapTorus</STRONG></A>=20
+  and <A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/LightTorus/Ligh=
+tTorus.html"><STRONG>LightTorus</STRONG></A>=20
+  programs.&nbsp; For a simpler setting illustrating the use of =
+textures, see=20
+  <STRONG><A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/TextureBMP/Text=
+ureBMP.html">TextureBMP</A>.</STRONG>=20
+
+  <LI>Compile and run the program.&nbsp; Test out the keyboard =
+controls.&nbsp;=20
+  The very last control (only) is new and not in =
+<STRONG>LightTorus.</STRONG>
+  <OL type=3Da>
+    <LI>Press arrow keys (left, right, up and down) to make the torus =
+rotate.=20
+    <LI>Press "s" to single step the animation,=20
+    <LI>Press "a" to start the animation running again without =
+stopping.&nbsp;=20
+    (Undoes the "s" effect.)=20
+    <LI>Press "r" to reset the torus back to its original orientation =
+with no=20
+    velocity.=20
+    <LI>Press "0" (zero) to zero the velocity of the torus, but leave =
+its=20
+    position fixed.=20
+    <LI>Press "W" to increase the number of wraps,&nbsp; "w" to decrease =
+the=20
+    number of wraps.=20
+    <LI>Press "N" to increase the number of segments per wrap.&nbsp; "n" =
+to=20
+    decrease the number of segments per wrap.=20
+    <LI>Press "q" to toggle between drawing quadrangles and triangles.=20
+    <LI>Press "p" to toggle between rendering in filled polygon mode, =
+and in=20
+    wireframe mode.=20
+    <LI>Press "f" to toggle between flat shading and smooth shading.=20
+    <LI>Press "0" (zero) and "1" (one) to toggle the lights (Light #0 =
+and light=20
+    #1) off and on.=20
+    <LI>Press "l" to toggle local mode off and on.&nbsp; This command =
+switches=20
+    between having a local viewer and a positional light and having a =
+non-local=20
+    viewer (i.e., positioned at a point at infinity) and a directional =
+light.=20
+    <LI>Press "t" to toggle the texture off and on. </LI></OL>
+  <LI>Observe the diffuse lighting, and how the lightness of the =
+textured torus=20
+  chnges with the brightness of the diffuse lighting.&nbsp; Note that =
+specular=20
+  highlights are not visible.. </LI></OL>
+<P align=3Dleft>&nbsp;</P>
+<P>&nbsp;</P></BODY></HTML>

@@ -1,0 +1,5 @@
+- fix lighting
+- fix comments
+- refactor + naming
+- show / hide physics simulation information (fps, dt, etc.)
+- readme.txt

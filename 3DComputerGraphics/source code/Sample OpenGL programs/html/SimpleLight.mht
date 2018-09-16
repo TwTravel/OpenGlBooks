@@ -1,0 +1,100 @@
+From: <ÓÉ Microsoft Internet Explorer 5 ±£´æ>
+Subject: SimpleLight
+Date: Fri, 29 Jan 2010 13:51:30 +0800
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="gb2312"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/SimpleLight/SimpleLight.html
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.5512
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>SimpleLight</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; charset=3Dgb2312">
+<META content=3D"MSHTML 6.00.2900.5583" name=3DGENERATOR></HEAD>
+<BODY>
+<P=20
+align=3Dcenter><BIG><BIG><BIG><U><STRONG>SimpleLight</STRONG></U></BIG></=
+BIG></BIG></P>
+<P><STRONG>SimpleLight</STRONG> is sample C code illustrating the use of =
+OpenGL.=20
+&nbsp; It is intended to accompany the book <EM><STRONG>3D Computer =
+Graphics: A=20
+mathematical approach with OpenGL</STRONG>, </EM>by Samuel R. Buss, =
+Cambridge=20
+University Press, 2003. &nbsp; However, it can be used independently as=20
+well.</P>
+<P><STRONG>SimpleLight </STRONG>illustrates the use Phong lighting in=20
+OpenGL.&nbsp; It draws six spheres of different colors, and makes a =
+white light=20
+revolve around the spheres.&nbsp;&nbsp; It consists of two source files, =
+
+<STRONG>SimpleLight.c</STRONG> and =
+<STRONG>SimpleLight.h.</STRONG>&nbsp;&nbsp;=20
+There are several options available for downloading this program:=20
+<UL>
+  <LI><A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/SimpleLight/Sim=
+pleLightProject.zip">SimpleLightProject.zip</A>:=20
+  A zip file, including the source files, Microsoft Visual C++ workspace =
+and=20
+  project files, and Win32 executable.=20
+  <LI><A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/SimpleLight/Sim=
+pleLight.zip">SimpleLight.zip</A>:=20
+  A zip file, with sources files and the executable.=20
+  <LI><A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/SimpleLight/Sim=
+pleLight.c">SimpleLight.c</A>=20
+  and <A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/SimpleLight/Sim=
+pleLight.h">SimpleLight.h</A>=20
+  and <A=20
+  =
+href=3D"http://www.math.ucsd.edu/~sbuss/MathCG/OpenGLsoft/SimpleLight/Sim=
+pleLight.exe">SimpleLight.exe</A>:&nbsp;=20
+  Download the two source files and the executable, one at a time. =
+</LI></UL>
+<P><STRONG>Things to notice:</STRONG>=20
+<OL>
+  <LI>Compile and run the program.&nbsp; Try out the keyboard =
+controls.&nbsp;=20
+  Pressing "r" starts and stops the animation.&nbsp; Pressing "s" =
+performs=20
+  single steps of the animation.&nbsp;&nbsp; The up and down arrows =
+control the=20
+  speed of the rotation.&nbsp; Pressing "l" (for local) switches between =
+a=20
+  positional light and a directional light.=20
+  <LI>Note the specular hightlights.=20
+  <LI>Note how the diffuse illumination is brightest facing the light, =
+and dims=20
+  quickly as the surface normals move away from facing the light source. =
+
+  <LI>Note how the bright center of diffuse illumination is not at the =
+same=20
+  position as the specular hightlight.&nbsp; What is this?=20
+  <LI>Note that there is some ambient light (both global ambient light =
+and=20
+  anbient light from light #0).&nbsp; For this reason, the sides of the =
+spheres=20
+  facing away the light source are not completely dark.=20
+  <LI>Note how the specular highlights change position when the light =
+switches=20
+  between directional and positional.&nbsp; Note how the diffuse =
+lighting=20
+  changes when the light switch is made.&nbsp; Explain qualitatively why =
+you see=20
+  the changes you do.=20
+  <LI>The six spheres and the light are all in the same plane (the=20
+  xy-plane).&nbsp; Why don't the spheres cast shadows on each other?=20
+  <LI>Note how the program used emissive properties to make the light =
+glow=20
+  white. &nbsp; However the fact that the white sphere is visible is =
+independent=20
+  of the fact that the light is active and shining. =
+</LI></OL></BODY></HTML>

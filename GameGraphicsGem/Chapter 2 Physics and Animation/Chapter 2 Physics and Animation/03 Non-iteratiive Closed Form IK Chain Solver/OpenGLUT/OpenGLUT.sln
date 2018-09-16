@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OpenGLUT", "OpenGLUT.vcproj", "{641D9F77-26AE-4297-A461-35D1F619A6D9}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OpenGLUT_static", "OpenGLUT_static.vcproj", "{296A5872-399A-4E33-957C-0182B1C61FD1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{641D9F77-26AE-4297-A461-35D1F619A6D9}.Debug|Win32.ActiveCfg = Debug|Win32
+		{641D9F77-26AE-4297-A461-35D1F619A6D9}.Debug|Win32.Build.0 = Debug|Win32
+		{641D9F77-26AE-4297-A461-35D1F619A6D9}.Release|Win32.ActiveCfg = Release|Win32
+		{641D9F77-26AE-4297-A461-35D1F619A6D9}.Release|Win32.Build.0 = Release|Win32
+		{296A5872-399A-4E33-957C-0182B1C61FD1}.Debug|Win32.ActiveCfg = Debug|Win32
+		{296A5872-399A-4E33-957C-0182B1C61FD1}.Debug|Win32.Build.0 = Debug|Win32
+		{296A5872-399A-4E33-957C-0182B1C61FD1}.Release|Win32.ActiveCfg = Release|Win32
+		{296A5872-399A-4E33-957C-0182B1C61FD1}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,1 @@
+SUBDIRS = demos redbook tests
