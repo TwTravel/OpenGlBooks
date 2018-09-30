@@ -1,0 +1,854 @@
+/* 
+ * Warning 
+ * 
+ * This file is a mess and badly needs reformatin and structuring. 
+ * It's not responsive at all and it may beneficiate from a deep refactoring.
+ *
+ */
+
+
+
+/* --- Structure ----------------------------------------------------------- */
+body {
+    color: #555555;
+    background-color: #f9f9f9;
+    font-size: 19px;
+    /* font-family: 'Source Sans Pro', sans-serif; */
+    font-family: 'Georgia', serif;
+    font-weight: 40>0;
+    line-height: 1.4em;
+    margin: 0;
+    padding: 0;
+    counter-reset: h1 h2 h3 figure chapter-sidebar;
+}
+
+
+.document {
+    margin-left: 300px;
+    max-width:   800px;
+    padding-left: 8em;
+    padding-right: 6em;
+    background-color: #ffffff;
+    border-right: 1px solid #e9e9e9;
+}
+
+.sidebar {
+    font-family: 'Source Sans Pro', sans-serif;
+    position: fixed;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #f0f0f0;
+
+    border-right: 1px solid #e9e9e9;
+    width: 300px;
+    padding: 0;
+    overflow-y: scroll;
+
+
+    background-color: rgb(47, 34, 48);
+    color: rgb(255,255,255);
+}
+
+.sidebar-title {
+    background-color: #DF3651;
+    margin: 0;
+    padding: 0;
+    padding: 1em 1em;
+}
+
+.sidebar-title a,
+.sidebar-title a:visited {
+    color: #ffffff;
+    font-variant: small-caps;
+    font-weight: 700;
+}
+
+.sidebar-title a:hover {
+    text-decoration: none;
+    border: 0;
+}
+
+.sidebar .small,
+.sidebar .subtitle {
+    display: block;
+    font-size: 75%;
+    margin-top: -0.5em;
+}
+
+.sidebar .subtitle {
+    font-variant: small-caps;
+    font-weight: 500;
+}
+
+
+.sidebar ul {
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar li ul {
+    margin-bottom: 0.5em;
+}
+
+.sidebar ul.simple > li > a::before {
+    display: block;
+    content: "chapter " counter(chapter-sidebar);
+    counter-increment: chapter-sidebar;
+    font-size: 85%;
+    font-weight: 500;
+    letter-spacing: 0.10em;
+    color: #bbbbbb;
+    border-bottom: 1px solid #777777;
+    width:40%;
+    margin-left: -5px;
+    padding-left: +5px;
+    padding-bottom: .15em;
+    margin-bottom: .25em;
+}
+
+.sidebar li {
+    font-weight: 700;
+    font-variant: small-caps;
+    margin: 0;
+    padding: 0;
+    line-height: 1em;
+    list-style-type: none;
+    margin-top: 1.5em;
+}
+
+.sidebar li li {
+    line-height: 1.25em;
+    margin: 0;
+    font-size: 90%;
+    font-variant: none;
+    font-weight: 500;
+    margin-top: 0;
+    margin-bottom: 0;
+    border: 0px;
+}
+
+.sidebar li li a {
+    color: #aaaaaa;
+}
+
+.sidebar li p {
+    margin: 0;
+    padding: 0;
+}
+.sidebar li a {
+    color: #ffffff;
+    padding-left: 20px;
+    display: block;
+    text-decoration: none;
+    padding-bottom: .25em;
+    padding-top: .25em;
+    padding-left: 1em;
+    transition: all 1.0s ease;
+}
+
+.sidebar li li a {
+    padding-left: 20px;
+    display: block;
+    text-decoration: none;
+    padding-bottom: 0em;
+    padding-top: 0em;
+    padding-left: 2em;
+    
+}
+
+.sidebar li a:hover,
+.sidebar li a:active,
+.sidebar li a:focus,
+.sidebar li a:target {
+    display: block;
+    border: 0;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #443344;
+}
+
+
+/* --- Title --------------------------------------------------------------- */
+h1.title::before {
+    content: none;
+}
+h1.title {
+    text-align: center;
+    color: #DF3651;
+    font-size: 1.9em;
+    font-variant: small-caps;
+    font-weight: 800;
+    line-height: 1.0em;
+    margin: 0;
+    padding: 0;
+    padding-top: 1.5em;
+    border: none;
+}
+p.subtitle {
+    font-size: 1.em;
+    margin: 0;
+    padding: 0;
+    margin-top: .5em;
+}
+
+h2.subtitle::before { content: none; }
+h2.subtitle, h2.subtitle a {
+    text-align: center;
+    color: #000;
+    font-size: 1.0em;
+    font-weight: 400;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 0.5em;
+}
+
+.title-logos {
+    /* opacity: 0.15; */
+    font-size: 80%;
+    text-align: center;
+    display: block;
+    padding: 0;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2.0em;
+}
+.title-logos p {
+    text-align: center;
+}
+.title-logos img {
+    padding: 0;
+    margin: 0;
+}
+img.teaser {
+    display: block;
+    width:100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.book-abstract {
+    font-family: 'Source Sans Pro', sans-serif; 
+    text-align: justify;
+    margin: 0.0em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    border-top: 1px solid #555555;
+    border-bottom: 1px solid #555555;
+}
+
+.book-colophon {
+    font-size: 75%;
+    line-height: 1.1em;
+    font-family: 'Source Sans Pro', sans-serif; 
+    text-align: justify;
+    padding:0;
+    margin:0;
+    /*    margin: 0.5em;*/
+    margin-top: 0em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid #555555;
+}
+.book-colophon .line {
+    text-align: center;
+}
+
+
+/* --- Headers ------------------------------------------------------------- */
+h1::before {
+    display: block-inline;
+    font-size: 75%;
+    content: "Chapter " counter(h1) " ";
+    counter-increment: h1;
+    /* color: #999; */
+    color: #DF3651; 
+    font-weight: 400;
+    font-variant: small-caps;
+    letter-spacing: 0.10em;
+    float: right;
+    margin: 0;
+    padding: 0;
+}
+
+h2::before, h3::before {
+    color: #DF3651; 
+    float:left;
+    text-align: left;
+    font-weight: 500;
+}
+h2::before {
+    text-align: right;
+    width: 80px;
+    padding-right: 10px;
+    counter-increment: h2;
+    content: counter(h1) "." counter(h2) " ";
+    background-color: #DF3651;
+    color: white;
+    margin-bottom: -10px;
+    padding-bottom: 10px;
+    margin-top: -10px;
+    padding-top: 10px;
+    margin-right: 10px;
+}
+h3::before {
+    text-align: right;
+    width: 90px;
+    padding-right: 10px;
+    counter-increment: h3;
+    content: counter(h1) "." counter(h2) "." counter(h3) " ";
+}
+h2 {
+    left: 100px;
+    margin-left: -100px;
+}
+h3 {
+    left: 100px;
+    margin-left: -100px;
+}
+
+
+
+h1, h2, h3, h4 {
+    font-family: 'Source Sans Pro', sans-serif;
+    padding: 15px 0 3px;
+    clear: both;
+    font-weight: 600;
+}
+h1 {
+    font-size: 2.em;
+    counter-reset: h2 figure;
+    padding-top: 1em;
+    padding-bottom: 8px;
+    border-bottom: 1.5px solid black;
+    margin-top: 6em;
+}
+h2 { font-size: 1.50em;
+     counter-reset: h3;
+     padding-top: 1.5em;
+   }
+h3 {
+    font-size: 1.25em;
+    counter-reset: h4;
+    padding-top: 1.25em;
+/*    font-weight: 400;*/
+}
+h4 {
+    font-size: 1.1em;
+    counter-reset: h5;
+    padding-top: 1.0em;
+/*    font-weight: 400;*/
+}
+h1 a, h1 a:visited, h1 a:hover,
+h2 a, h2 a:visited, h2 a:hover,
+h3 a, h3 a:visited, h3 a:hover,
+h4 a, h4 a:visited, h4 a:hover {
+    color: black;
+    decoration: none;
+    border: none;
+}
+
+.section {
+    padding-bottom: 2em;
+}
+.section .section {
+    padding-bottom: 0em;
+}
+
+.literal-block {
+    font-size: 90%;
+    line-height: 1em;
+    font-family: 'Source Code Pro';
+}
+
+/* --- Links --------------------------------------------------------------- */
+a {
+    color: #059;
+    text-decoration: none;
+    transition: all 1.0s ease;
+/*    border-bottom: .5px dashed #059;*/
+}
+a:visited {
+    color: #059;
+}
+a:hover {
+/*    color: #059;*/
+    color: #DF3651; 
+/*    border-bottom: .5px solid #059;*/
+}
+a:active {
+    color:#000000;
+}
+
+:target {
+    border: none;
+}
+::selection {
+    background-color: #f0f0f0;
+}
+
+/* --- Minitoc ------------------------------------------------------------- */
+
+.toc {
+    padding-bottom: 1em;
+/*    width: 65%;*/
+/*    clear:both;*/
+    font-family: Source Sans Pro, sans;
+    font-variant: small-caps;
+    display: flex;
+    font-size: 90%;
+    line-height: 120%;
+}
+
+.toc ul.simple:before {
+    display: block;
+    color: #ccc;
+    font-weight: bold;
+    font-family: Source Sans Pro, sans;
+    content: "CONTENTS";
+    font-size: 80%;
+    float: right;
+}
+
+.toc ul.simple {
+    font-size: 95%;
+    margin: 0;
+    padding: 1em;
+    padding-left: 2em;
+    background: #f9f9f9;
+    border: 1px solid #555;
+    border-radius: 5px;
+    border-radius: 0px 5px 5px 0px;
+    flex: 1;
+    order: 1;
+}
+
+.topic-title {
+    display: block;
+    flex: 2;
+    order: 0;
+    
+    background: #f9f9f9;
+    border: 1px solid #555;
+    border-right: none;
+    border-radius: 5px 0px 0px 5px;
+    padding: 0;
+    margin: 0;
+    margin-right: 0.0em;
+
+    /* Hide the text */
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+
+.chapter-01 .topic-title {
+    background: url("images/chapter-01/toc.png") no-repeat center;
+    background-size: 100%;
+}
+.chapter-02 .topic-title {
+    background: url("images/chapter-02/toc.png") no-repeat center;
+    background-size: 100%;
+}
+.chapter-03 .topic-title {
+    background: url("images/chapter-03/toc.png") no-repeat center;
+    background-size: 100%;
+}
+.chapter-04 .topic-title {
+    background: url("images/chapter-04/toc.png") no-repeat center;
+    background-size: 125%;
+}
+.chapter-05 .topic-title {
+    background: url("images/chapter-05/toc.png") no-repeat center;
+    background-size: 100%;
+}
+.chapter-06 .topic-title {
+    background: url("images/chapter-06/toc.png") no-repeat center;
+    background-size: 100%;
+    background-position: center 25%;
+}
+.chapter-07 .topic-title {
+    background: url("images/chapter-07/toc.png") no-repeat center;
+    background-size: 100%;
+}
+.chapter-08 .topic-title {
+    background: url("images/chapter-08/toc.png") no-repeat center;
+    background-size: 100%;
+}
+.chapter-09 .topic-title {
+    background: url("images/chapter-09/toc.png") no-repeat center;
+    background-size: 100%;
+}
+.chapter-10 .topic-title {
+    background: url("images/chapter-10/toc.png") no-repeat center;
+    background-size: 100%;
+}
+.chapter-11 .topic-title {
+    background: url("images/chapter-11/toc.png") no-repeat center;
+    background-size: 100%;
+}
+.chapter-12 .topic-title {
+    background: url("images/chapter-12/toc.png") no-repeat center;
+c    background-size: 100%;
+}
+.chapter-13 .topic-title {
+    background: url("images/chapter-13/toc.png") no-repeat center;
+    background-size: 100%;
+}
+.chapter-14 .topic-title {
+    background: url("images/chapter-14/toc.png") no-repeat center;
+    background-size: 125%;
+}
+.chapter-15 .topic-title {
+    background: url("images/chapter-15/toc.png") no-repeat center;
+    background-size: 125%;
+}
+.chapter-16 .topic-title {
+    background: url("images/chapter-16/toc.png") no-repeat center;
+    background-size: 175%;
+}
+.chapter-17 .topic-title {
+    background: url("images/chapter-17/toc.png") no-repeat center;
+    background-size: 125%;
+}
+
+
+
+.toc p {
+    /*
+    padding: 0;
+    margin: 0;
+   */
+}
+
+.toc ul.simple ul {
+    padding-left: 1.5em;
+}
+
+.toc ul.simple li {
+    color: #000;
+/*    font-weight: 500;*/
+    /*    list-style-type: none; */
+    color: #059;
+    padding-left: 0em;
+}
+
+.toc ul.simple li li {
+    font-size: 90%;
+    line-height: 1.5em;
+/*    font-weight: normal; */
+/*    list-style-type: none;*/
+    padding-left: 0em;
+}
+
+strong {
+    font-weight: 600;
+}
+
+
+
+
+/* --- Bibliography -------------------------------------------------------- */
+.abstract {
+    border-left: 1px solid #ddd;
+    padding-left: 1em;
+    font-size:    85%;
+    line-height: 125%;
+}
+.line-block {
+    line-height: 125%;
+}
+
+
+/* --- Tables -------------------------------------------------------------- */
+table {
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 33%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: none;
+    border-bottom: .5px solid #999999;
+}
+
+.fullwidth {
+    min-width: 100%;
+}
+.align-left {
+    margin-left: 0;
+}
+
+td, th {
+    border: none;
+}
+th {
+    text-align: left; 
+    font-weight: 400; /* Make sure they're bold */
+    border-bottom: 1px solid black;
+}
+td {
+    text-align: left; 
+    border: none;
+}
+tr:nth-child(even) td {
+    background: #f0f0f0;
+}
+
+table p {
+    margin: 0;
+}
+
+/* --- Admonitions --------------------------------------------------------- */
+
+.admonition {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 85%;
+    line-height: 1.25em;
+    background-color: #ffffdd;
+    padding: 0;
+    margin: 0;
+    width:33%;
+    float: right;
+    margin-left: 1em;
+    margin-bottom: 1em;
+}
+.admonition p {
+    margin: 0;
+    padding: .5em 1em;
+}
+p.admonition-title {
+    background-color: #eeeeaa;
+    font-weight: 600;
+    padding: 0.1em 1em;
+    padding-bottom: .25em;
+}
+
+
+hr {
+    border: none;
+    clear: both;
+}
+
+
+/* --- Images, Videos & Figures -------------------------------------------- */
+img {
+    margin: 1em 0;
+}
+
+.right {
+    margin: 0;
+    padding: 0;
+    float: right;
+    margin-left: 1em;
+}
+
+.left {
+    float: left;
+    margin: 0;
+    padding: 0;
+    margin-right: 1em;
+}
+
+.align-right {
+    float: right;
+    margin: 0;
+    padding: 0;
+    margin-left: 1.0em;
+}
+
+
+.figure {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 85%;
+    line-height: 1.25em;
+/*    margin: 0;*/
+/*    padding: 0;*/
+    counter-increment: figure;
+    overflow:auto;
+/*    border: 1px solid #ccc;*/
+/*    float: right;*/
+/*    margin-left: 1em;*/
+    padding-bottom: 1em;
+}
+.figure img, .figure video {
+    width: 100%;
+    background-color: #fff;
+    margin: 0;
+}
+
+.figure .caption {
+    color: #fff;
+    background-color: #000;
+    margin: 0;
+    padding: 0.25em 0.75em;
+    display: block;
+    font-weight: 600;
+}
+.figure .caption::after {
+    content: " " counter(h1) "." counter(figure);
+}
+
+.figure .legend {
+    font-size: 90%;
+    line-height: 120%;
+    background-color: #f0f0f0;
+    padding: 0.5em 0.75em;
+}
+
+.figure .legend p {
+    margin: 0;
+}
+
+
+
+
+
+/* --- Math ---------------------------------------------------------------- */
+span.formula,
+div.formula {
+    color: #955;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 300;
+}
+
+/* --- Code ---------------------------------------------------------------- */
+.proto {
+    display: inline-block;
+    background-color: #f5f5ff;
+    font-size:   90%;
+    font-weight: normal;
+    font-family: 'Source Code Pro';
+    padding: 0px 8px;
+    margin-top: 2px;
+    border-radius: 3px;
+    border: 1px solid #c0c0ff;
+}
+
+code {
+    font-size:   90%;
+    font-weight: 500;
+    font-family: 'Source Code Pro';
+}
+
+pre.code {
+    display:        block;
+    font-size:      90%;
+    font-family:    'Source Code Pro', monospace;
+    font-weight:    400;
+    line-height:    125%;
+    padding-left:   2.0em;
+    padding-top:    0.5em;
+    padding-bottom: 0.5em;
+    overflow-x:     auto;
+}
+pre.code {
+    background:     #fcfcfc;
+    border-top:     .5px solid #ccc;
+    border-bottom:  .5px solid #ccc;
+
+    line-height:   1.35em;
+    font-size:     75%;
+    border-radius: 5.0px;
+    border:        0.5px solid #ccc;
+}
+
+
+pre.neutral {
+    background: none;
+    border: none;
+}
+
+pre.output:before {
+    display: block;
+    color: #ccc;
+    font-weight: bold;
+    content: "OUTPUT";
+    float: right;
+    margin-right: 1em;
+}
+pre.output {
+    background-color: #f9f9f9;
+}
+
+
+pre.math:before {
+    display: block;
+    color: #ccc;
+    font-weight: bold;
+    content: "MATH";
+    float: right;
+    margin-right: 1em;
+}
+pre.math {
+    background-color: #f9f9f9;
+}
+
+
+pre.glsl:before {
+    display: block;
+    color: #ccf;
+    font-weight: bold;
+    content: "GLSL";
+    float: right;
+    margin-right: 1em;
+}
+pre.glsl {
+    background-color: #f9f9ff;
+}
+
+pre.python:before {
+    display: block;
+    color: #dd9;
+    font-weight: bold;
+    content: "PYTHON";
+    float: right;
+    margin-right: 1em;
+}
+pre.python {
+    background-color: #fffff9;
+}
+
+
+
+.function, .class {
+    font-weight: 400;
+}
+.comment, .string {
+    color: #459;
+}
+
+
+
+/* --- List buttons -------------------------------------------------------- */
+ul.button {
+    display: table;
+    width: auto;
+    margin: 0;
+    padding: 0;
+    border-spacing: 3px;
+}
+ul.button li {
+    display: table-cell;
+    text-align: center;
+    list-style-type: none;
+    background-color: #DF3651;
+    margin: 0;
+    width:20em;
+    border-radius: 4px;
+/*    border: 1px solid black;*/
+}
+
+ul.button li a {
+    font-size: 150%;
+    font-family: 'Source Sans Pro', sans-serif;
+    display:block;
+    padding: 0.5em 0.0em 0.5em 0.0em;
+    color: #ffffff;
+    transition: all 1.0s ease;
+    border-radius: 4px;
+}
+ul.button li a:hover {
+    background-color: #000000;
+}
