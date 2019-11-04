@@ -1,0 +1,193 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU1 MENU DISCARDABLE 
+BEGIN
+    POPUP "File"
+    BEGIN
+        MENUITEM "Take Screenshot",             ID_DEMO_SCREENSHOT
+        MENUITEM SEPARATOR
+        MENUITEM "Exit",                        ID_DEMO_EXIT
+    END
+    POPUP "Height Map"
+    BEGIN
+        MENUITEM "Save Current",                ID_DEMO_SAVEMAP
+        MENUITEM SEPARATOR
+        MENUITEM "Generate using Fault Formation", ID_DEMO_FF
+        MENUITEM "Generate using Midpoint Displacement", ID_DEMO_MD
+    END
+    POPUP "Texture Map"
+    BEGIN
+        MENUITEM "Save Current",                ID_DEMO_SAVE_TEXTUREMAP
+        MENUITEM SEPARATOR
+        MENUITEM "Generate",                    ID_DEMO_GENERATE_TEXTURE_MAP
+    END
+    POPUP "Light Map"
+    BEGIN
+        MENUITEM "Save Current",                ID_DEMO_SAVELIGHTMAP
+        MENUITEM SEPARATOR
+        MENUITEM "Customize Slope Lighting",    ID_DEMO_CUSTOMIZE_SLOPE
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ICON1               ICON    DISCARDABLE     "icon1.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_TEXTURESIZE DIALOG DISCARDABLE  0, 0, 160, 44
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Select Texture Size"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "Generate",ID_TEXTUREDD_GENERATE,101,7,50,14
+    PUSHBUTTON      "Cancel",ID_TEXTUREDD_CANCEL,101,21,50,14
+    CTEXT           "Texture Size:",IDC_STATIC,7,17,42,8
+    EDITTEXT        IDC_ROUGHNESS,51,16,22,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+END
+
+IDD_ROUGHNESS DIALOG DISCARDABLE  0, 0, 160, 44
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Select Roughness"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "Generate",ID_ROUGHNESSDD_GENERATE,101,7,50,14
+    PUSHBUTTON      "Cancel",ID_ROUGHNESSDD_CANCEL,101,21,50,14
+    CTEXT           "Detail:",IDC_STATIC,7,17,21,8
+    EDITTEXT        IDC_ROUGHNESS,30,16,22,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+END
+
+IDD_CUSTOMIZE_SLOPE DIALOG DISCARDABLE  0, 0, 212, 110
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Customize Slope Lighting"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",ID_SLOPE_LIGHT_OK,155,7,50,14
+    PUSHBUTTON      "Cancel",ID_SLOPE_LIGHT_CANCEL,155,24,50,14
+    LTEXT           "Color (R, G, B values in the range of 0-255)",
+                    IDC_STATIC,7,13,136,8
+    EDITTEXT        IDC_SLOPE_LIGHT_RED,27,23,24,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_SLOPE_LIGHT_GREEN,76,23,24,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_SLOPE_LIGHT_BLUE,120,23,24,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "Red:",IDC_STATIC,11,24,16,8
+    LTEXT           "Green:",IDC_STATIC,54,24,22,8
+    LTEXT           "Blue:",IDC_STATIC,103,24,17,8
+    LTEXT           "Light Direction:   X:",IDC_STATIC,7,43,61,8
+    EDITTEXT        IDC_SLOPE_LIGHT_DIR_X,69,42,24,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    LTEXT           "Z:",IDC_STATIC,103,43,8,8
+    EDITTEXT        IDC_SLOPE_LIGHT_DIR_Z,112,42,24,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    LTEXT           "Brightness (in the range of 0-255):",IDC_STATIC,7,58,
+                    107,8
+    LTEXT           "Min:",IDC_STATIC,11,69,14,8
+    EDITTEXT        IDC_SLOPE_LIGHT_MINBRIGHT,26,68,24,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "Max:",IDC_STATIC,61,69,16,8
+    EDITTEXT        IDC_SLOPE_LIGHT_MAXBRIGHT,78,68,24,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "Light Softness:",IDC_STATIC,7,87,48,8
+    EDITTEXT        IDC_SLOPE_LIGHT_SOFTNESS,56,86,24,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_CUSTOMIZE_SLOPE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 205
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 103
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

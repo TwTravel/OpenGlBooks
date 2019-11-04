@@ -1,0 +1,78 @@
+# Microsoft Developer Studio Generated Dependency File, included by demo7_1.mak
+
+.\main.cpp : \
+	"..\Base Code\camera.h"\
+	"..\Base Code\gl_app.h"\
+	"..\Base Code\glext.h"\
+	"..\Base Code\image.h"\
+	"..\Base Code\log.h"\
+	"..\Base Code\math_ops.h"\
+	"..\Base Code\timer.h"\
+	".\ROAM.h"\
+	".\terrain.h"\
+	"f:\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	
+
+.\ROAM.cpp : \
+	"..\Base Code\camera.h"\
+	"..\Base Code\gl_app.h"\
+	"..\Base Code\glext.h"\
+	"..\Base Code\image.h"\
+	"..\Base Code\log.h"\
+	"..\Base Code\math_ops.h"\
+	"..\Base Code\timer.h"\
+	".\randtab.h"\
+	".\ROAM.h"\
+	".\terrain.h"\
+	"f:\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	
+
+.\terrain.cpp : \
+	"..\Base Code\gl_app.h"\
+	"..\Base Code\glext.h"\
+	"..\Base Code\image.h"\
+	"..\Base Code\log.h"\
+	"..\Base Code\math_ops.h"\
+	"..\Base Code\timer.h"\
+	".\terrain.h"\
+	"f:\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	
+
+"..\Base Code\camera.cpp" : \
+	"..\Base Code\camera.h"\
+	"..\Base Code\gl_app.h"\
+	"..\Base Code\glext.h"\
+	"..\Base Code\log.h"\
+	"..\Base Code\math_ops.h"\
+	"..\Base Code\timer.h"\
+	"f:\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	
+
+"..\Base Code\gl_app.cpp" : \
+	"..\Base Code\gl_app.h"\
+	"..\Base Code\glext.h"\
+	"..\Base Code\image.h"\
+	"..\Base Code\log.h"\
+	"..\Base Code\math_ops.h"\
+	"..\Base Code\timer.h"\
+	"f:\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	
+
+"..\Base Code\image.cpp" : \
+	"..\Base Code\image.h"\
+	"..\Base Code\log.h"\
+	"f:\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	
+
+"..\Base Code\log.cpp" : \
+	"..\Base Code\log.h"\
+	"f:\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	
+
+"..\Base Code\math_ops.cpp" : \
+	"..\Base Code\math_ops.h"\
+	
+
+.\resource.rc : \
+	".\icon1.ico"\
+	

@@ -1,0 +1,21 @@
+20
+stand 1 40
+run 1 6
+attack 1 8
+pain1 1 4
+pain2 1 4
+pain3 1 4
+jump 1 6
+flip 1 12
+salute 1 11
+taunt 1 17
+wave 1 11
+point 1 12
+crstnd 1 19
+crwalk 1 6
+crattak 1 9
+crpain 1 4
+crdeath 1 5
+death1 1 6
+death2 1 6
+death3 1 8

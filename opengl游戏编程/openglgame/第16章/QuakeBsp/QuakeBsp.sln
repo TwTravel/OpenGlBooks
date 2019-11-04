@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QuakeBsp", "QuakeBsp\QuakeBsp.vcproj", "{7C624111-2CC1-420C-AF7C-982077EE167C}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{7C624111-2CC1-420C-AF7C-982077EE167C}.Debug.ActiveCfg = Debug|Win32
+		{7C624111-2CC1-420C-AF7C-982077EE167C}.Debug.Build.0 = Debug|Win32
+		{7C624111-2CC1-420C-AF7C-982077EE167C}.Release.ActiveCfg = Release|Win32
+		{7C624111-2CC1-420C-AF7C-982077EE167C}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

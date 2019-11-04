@@ -1,0 +1,55 @@
+/*/////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+  Direct Input 
+
+
+
+
+
+/*/////////////////////////////////////////////////////////////////////
+#if !defined(__DI_INCLUDE__)
+#define __DI_INCLUDE__
+
+#define DIRECTINPUT_VERSION 0x0700
+
+#include <dinput.h>
+#pragma comment(lib,"dinput.lib")
+
+#include <mmsystem.h>
+#pragma comment(lib,"winmm.lib")
+
+
+
+/*/////////////////////////////////////////////////////////////////////
+
+  使用者操作
+
+/*/////////////////////////////////////////////////////////////////////
+typedef struct _DI_DEVICE_DATA
+{
+	DWORD		_time ;//經過時間
+	int			News4  ;//點一下方向
+	int			News4ing  ;//按住方向
+	BYTE		Bn[4]	 ;//按一下按鍵
+	BYTE		Bning[4] ;//按住按鍵
+}DI_DEVICE_DATA ;
+extern DI_DEVICE_DATA di_DDD ;
+/*/////////////////////////////////////////////////////////////////////
+
+
+  基本程序
+
+
+/*/////////////////////////////////////////////////////////////////////
+BOOL diCreate( HINSTANCE hInst , HWND hWnd );
+void diRelease();
+
+//鍵盤→操作(Keyboard→di_DDD)
+void diRun();
+
+#endif

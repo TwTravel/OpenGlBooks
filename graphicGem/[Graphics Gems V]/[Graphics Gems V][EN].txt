@@ -1,0 +1,52 @@
+Graphics Gems V
+by Alan Paeth (Author) 
+
+ 
+Search inside this book  
+List Price:   $73.95  
+Price:   $73.95 & This item ships for FREE with Super Saver Shipping. See details.   
+Availability: Usually ships within 24 hours
+
+
+14 used & new from $49.00 
+
+Edition: Hardcover 
+
+Product Details 
+
+Hardcover: 438 pages ; Dimensions (in inches): 1.38 x 9.52 x 7.60 
+Publisher: Morgan Kaufmann; Book and Disk edition (January 15, 1995) 
+ISBN: 0125434553 
+
+Average Customer Review:  Based on 1 review. Write a review. 
+
+Amazon.com Sales Rank: 66,438 
+(Publishers and authors: improve your sales) 
+
+Editorial Reviews 
+
+Ingram
+An essential, time-saving tool for many programmers, this book contains about 50 new gems displaying the most recent and innovative techniques in graphics programming, such as ellipses, splines, Bezier, curves and ray tracing. Disk includes source code from all five volumes of this series. 
+
+
+Book Info
+IBM Version. Provides practical tools for implementing new ideas and techniques into your programs. Provides code written in C or C++. 3 1/2 inch disk included. DLC: Computer graphics. 
+
+
+Back Cover Copy
+
+
+
+Latest collection of graphics tips in The Graphics Gems Series written by the leading programmers in the field. Contains about 50 new gems displaying the most recent and innovative techniques in graphics programming. Includes new gems on ellipses,
+splines, Bezier curves, and ray tracing. Disk included contains source code from all five volumes and is available in both IBM and Macintosh versions. 
+
+
+Book Description
+Graphics Gems V is the newest volume in The Graphics Gems Series. It is intended to provide the graphics community with a set of practical tools for implementing new ideas and techniques, and to offer working solutions to real programming problems. These tools are written by a wide variety of graphics programmers from industry, academia, and research. The books in the series have become essential, time-saving tools for many programmers.
+
+Key Features
+* Latest collection of graphics tips in The Graphics Gems Series written by the leading programmers in the field
+* Contains over 50 new gems displaying some of the most recent and innovative techniques in graphics programming
+* Includes gems covering ellipses, splines, Bezier curves, and ray tracing
+* Disk included containing source code from the gems available in both IBM and Macintosh versions 
+

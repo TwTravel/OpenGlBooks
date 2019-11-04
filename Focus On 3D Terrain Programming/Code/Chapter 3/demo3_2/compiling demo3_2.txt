@@ -1,0 +1,13 @@
+==========================================
+= Focus on 3D Terrain Programming ========
+= Compiling Demo3_2 ======================
+= Trent Polack (trent@voxelsoft.com) =====
+==========================================
+
+Ok, so you wanna compile this demo from "Focus on 3D Terrain Programming, huh?  Well, as long as you are using Microsoft Visual C++, doing this is as easy as one-two-three.
+
+1) Open Microsoft Visual C++ (I used version 6.0 for this demo)
+2) Click "File," then navigate your way down to "Open Workspace," and open "demo3_2.dsw."
+3) Once the workspace has finished loading, click "Build," and work your way down to "Execute demo3_2.exe."  Or, instead of that, you could just hit ctrl+F5. :)
+
+There ya go, now enjoy the demo, and the rest of the book!

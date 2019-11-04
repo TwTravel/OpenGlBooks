@@ -1,0 +1,42 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: demo8_4 - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "D:\DOCUME~1\trent\LOCALS~1\Temp\RSP2FB.tmp" with contents
+[
+/nologo /ML /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /Fp"Release/demo8_4.pch" /YX /Fo"Release/" /Fd"Release/" /FD /c 
+"C:\Coding\Focus on 3D Terrain\Chapter 8- Wrapping it Up, Special Effects and More\demo8_4\main.cpp"
+]
+Creating command line "cl.exe @D:\DOCUME~1\trent\LOCALS~1\Temp\RSP2FB.tmp" 
+Creating temporary file "D:\DOCUME~1\trent\LOCALS~1\Temp\RSP2FC.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:windows /incremental:no /pdb:"Release/demo8_4.pdb" /machine:I386 /out:"Release/demo8_4.exe" 
+".\Release\main.obj"
+".\Release\ROAM.obj"
+".\Release\skydome.obj"
+".\Release\terrain.obj"
+".\Release\water.obj"
+".\Release\camera.obj"
+".\Release\gl_app.obj"
+".\Release\image.obj"
+".\Release\log.obj"
+".\Release\math_ops.obj"
+".\Release\resource.res"
+]
+Creating command line "link.exe @D:\DOCUME~1\trent\LOCALS~1\Temp\RSP2FC.tmp"
+<h3>Output Window</h3>
+Compiling...
+main.cpp
+Linking...
+
+
+
+<h3>Results</h3>
+demo8_4.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

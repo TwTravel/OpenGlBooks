@@ -1,0 +1,106 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: LOTR - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP7F.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /Fp"Debug/LOTR.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\Documents and Settings\Administrator\桌面\最终\光盘资料\第17章\LOTR\AseLoader.cpp"
+"C:\Documents and Settings\Administrator\桌面\最终\光盘资料\第17章\LOTR\DrawScenes.cpp"
+"C:\Documents and Settings\Administrator\桌面\最终\光盘资料\第17章\LOTR\Graph.cpp"
+"C:\Documents and Settings\Administrator\桌面\最终\光盘资料\第17章\LOTR\Lotr.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP7F.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP80.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:windows /incremental:yes /pdb:"Debug/LOTR.pdb" /debug /machine:I386 /out:"Debug/LOTR.exe" /pdbtype:sept 
+".\Debug\AseLoader.obj"
+".\Debug\DrawScenes.obj"
+".\Debug\Graph.obj"
+".\Debug\Lotr.obj"
+]
+Creating command line "link.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP80.tmp"
+<h3>Output Window</h3>
+Compiling...
+AseLoader.cpp
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\aseloader.cpp(149) : warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+DrawScenes.cpp
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\linear.h(201) : warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\linear.h(202) : warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\linear.h(246) : warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\linear.h(247) : warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\quaternions.h(104) : warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\quaternions.h(193) : warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\quaternions.h(194) : warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\quaternions.h(272) : warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\quaternions.h(274) : warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\quaternions.h(275) : warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\quaternions.h(286) : warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\quaternions.h(287) : warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\quaternions.h(288) : warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\quaternions.h(385) : warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\quaternions.h(385) : warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\quaternions.h(385) : warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\quaternions.h(386) : warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\quaternions.h(386) : warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\quaternions.h(386) : warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\quaternions.h(387) : warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\quaternions.h(387) : warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\quaternions.h(387) : warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\drawscenes.cpp(225) : warning C4305: 'argument' : truncation from 'const double' to 'float'
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\drawscenes.cpp(226) : warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\drawscenes.cpp(226) : warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\drawscenes.cpp(296) : warning C4305: 'argument' : truncation from 'const double' to 'float'
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\drawscenes.cpp(311) : warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\drawscenes.cpp(317) : warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\drawscenes.cpp(323) : warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\drawscenes.cpp(341) : warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\drawscenes.cpp(347) : warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\drawscenes.cpp(352) : warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\drawscenes.cpp(372) : warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\drawscenes.cpp(377) : warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\drawscenes.cpp(399) : warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\drawscenes.cpp(439) : warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\drawscenes.cpp(564) : warning C4305: '+=' : truncation from 'const double' to 'float'
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\drawscenes.cpp(567) : warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\drawscenes.cpp(582) : warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\drawscenes.cpp(582) : warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\drawscenes.cpp(582) : warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\drawscenes.cpp(619) : warning C4305: 'argument' : truncation from 'const double' to 'float'
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\drawscenes.cpp(623) : warning C4305: 'argument' : truncation from 'const double' to 'float'
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\drawscenes.cpp(637) : warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\drawscenes.cpp(637) : warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\drawscenes.cpp(648) : warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\drawscenes.cpp(648) : warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\drawscenes.cpp(659) : warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\drawscenes.cpp(659) : warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\drawscenes.cpp(670) : warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\drawscenes.cpp(710) : warning C4305: 'argument' : truncation from 'const double' to 'float'
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\drawscenes.cpp(715) : warning C4305: 'argument' : truncation from 'const double' to 'float'
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\drawscenes.cpp(756) : warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\drawscenes.cpp(758) : warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\drawscenes.cpp(758) : warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\drawscenes.cpp(760) : warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\drawscenes.cpp(772) : warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\drawscenes.cpp(774) : warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\drawscenes.cpp(774) : warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\drawscenes.cpp(776) : warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\drawscenes.cpp(784) : warning C4305: 'argument' : truncation from 'const double' to 'float'
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\drawscenes.cpp(784) : warning C4305: 'argument' : truncation from 'const double' to 'float'
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\drawscenes.cpp(784) : warning C4305: 'argument' : truncation from 'const double' to 'float'
+Graph.cpp
+c:\documents and settings\administrator\桌面\最终\光盘资料\第17章\lotr\graph.cpp(9) : warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+Lotr.cpp
+Linking...
+
+
+
+<h3>Results</h3>
+LOTR.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>
