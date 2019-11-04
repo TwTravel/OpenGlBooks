@@ -1,0 +1,39 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: canvas - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x404 /fo"Debug/canvasr.res" /d "_DEBUG" "D:\®Ñ\VC++\ch10\ch10-1\canvasr.rc"" 
+Creating temporary file "C:\JWINDOWS\TEMP\RSPB051.TMP" with contents
+[
+/nologo /MTd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /Fp"Debug/canvas.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"D:\®Ñ\VC++\ch10\ch10-1\canvasApp.cpp"
+"D:\®Ñ\VC++\ch10\ch10-1\canvasFrame.cpp"
+]
+Creating command line "cl.exe @C:\JWINDOWS\TEMP\RSPB051.TMP" 
+Creating temporary file "C:\JWINDOWS\TEMP\RSPB052.TMP" with contents
+[
+Dxguid.lib Dinput.lib /nologo /subsystem:windows /incremental:yes /pdb:"Debug/canvas.pdb" /map:"Debug/canvas.map" /debug /machine:I386 /out:"Debug/canvas.exe" /pdbtype:sept 
+".\Debug\canvasApp.obj"
+".\Debug\canvasFrame.obj"
+".\Debug\canvasr.res"
+]
+Creating command line "link.exe @C:\JWINDOWS\TEMP\RSPB052.TMP"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+canvasApp.cpp
+c:\program files\microsoft visual studio\vc98\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+canvasFrame.cpp
+Linking...
+
+
+
+<h3>Results</h3>
+canvas.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

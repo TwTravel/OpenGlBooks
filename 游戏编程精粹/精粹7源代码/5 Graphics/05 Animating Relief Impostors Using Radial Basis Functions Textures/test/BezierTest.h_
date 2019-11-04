@@ -1,0 +1,82 @@
+#ifndef BezierTEST_H_
+#define BezierTEST_H_
+
+#include "Testcase.h"
+#include "../src/RBF.h"
+#include "../src/RBFBasedBezier.h"
+
+class BezierTest :  public Testcase {
+public:
+
+	void testInicial() {
+		RBF<double, 2> * rbfPR = new RBF<double, 2>();
+		RBF<double, 2> * rbfRT = new RBF<double, 2>();
+		
+		Vector<double, 2> p1( 0, 5);
+		Vector<double, 2> p2(-1, 0);
+
+		Vector<double, 2> r1( 0, 5);
+		Vector<double, 2> r2( 0, 0);
+
+		Vector<double, 2> t1( 0, 5);
+		Vector<double, 2> t2( 1, 0);
+		
+		rbfPR->addPoint( p1, r1);
+		rbfPR->addPoint( p2, r2);
+
+		rbfRT->addPoint( r1, t1);
+		rbfRT->addPoint( r2, t2);
+		
+		assertTrue("Test p1", rbfPR->eval(p1) == r1);
+		assertTrue("Test p2", rbfPR->eval(p2) == r2);
+
+		assertTrue("Test p1", rbfRT->eval(r1) == t1);
+		assertTrue("Test p2", rbfRT->eval(r2) == t2);
+		
+		p1 = rbfPR->eval(p1);
+		
+		assertTrue("Merda de C++", p1 == r1);
+		
+		RBFBasedBezier<double, 2> bezier;
+		bezier.addRBF(rbfPR);
+		
+		assertEquals("p2 no tempo 0.0", "[ -1, 0] ",    bezier.eval(p2, 0.0f).print());
+		assertEquals("p2 no tempo 0.1", "[ -0.9, 0] ",  bezier.eval(p2, 0.1f).print());
+		assertEquals("p2 no tempo 0.2", "[ -0.8, 0] ",  bezier.eval(p2, 0.2f).print());
+		assertEquals("p2 no tempo 0.3", "[ -0.7, 0] ",  bezier.eval(p2, 0.3f).print());
+		assertEquals("p2 no tempo 0.4", "[ -0.6, 0] ",  bezier.eval(p2, 0.4f).print());
+		assertEquals("p2 no tempo 0.5", "[ -0.5, 0] ",  bezier.eval(p2, 0.5f).print());
+		assertEquals("p2 no tempo 0.6", "[ -0.4, 0] ",  bezier.eval(p2, 0.6f).print());
+		assertEquals("p2 no tempo 0.8", "[ -0.2, 0] ",  bezier.eval(p2, 0.8f).print());
+		assertEquals("p2 no tempo 0.9", "[ -0.1, 0] ",  bezier.eval(p2, 0.9f).print());
+		assertEquals("p2 no tempo 1.0", "[ 0, 0] ",     bezier.eval(p2, 1.0f).print());
+		
+		bezier.addRBF(rbfRT);  
+		
+		assertEquals("p2 no tempo 0.0 com PRT", "[ -1, 0] ",    bezier.eval(p2, 0.0f).print());
+		assertEquals("p2 no tempo 0.1 com PRT", "[ -0.8, 0] ",  bezier.eval(p2, 0.1f).print());
+		assertEquals("p2 no tempo 0.2 com PRT", "[ -0.6, 0] ",  bezier.eval(p2, 0.2f).print());
+		assertEquals("p2 no tempo 0.3 com PRT", "[ -0.4, 0] ",  bezier.eval(p2, 0.3f).print());
+		assertEquals("p2 no tempo 0.4 com PRT", "[ -0.2, 0] ",  bezier.eval(p2, 0.4f).print());
+		assertEquals("p2 no tempo 0.5 com PRT", "[ 0, 0] ",     bezier.eval(p2, 0.5f).print());
+		assertEquals("p2 no tempo 0.6 com PRT", "[ 0.2, 0] ",   bezier.eval(p2, 0.6f).print());
+		assertEquals("p2 no tempo 0.8 com PRT", "[ 0.6, 0] ",   bezier.eval(p2, 0.8f).print());
+		assertEquals("p2 no tempo 0.9 com PRT", "[ 0.8, 0] ",   bezier.eval(p2, 0.9f).print());
+		assertEquals("p2 no tempo 1.0 com PRT", "[ 1, 0] ",     bezier.eval(p2, 1.0f).print());	
+		
+		assertEquals("p1 no tempo 1.0", "[ 0, 5] ", bezier.eval(p1, 0.0f).print());
+		assertEquals("p1 no tempo 1.0", "[ 0, 5] ", bezier.eval(p1, 0.3f).print());
+		assertEquals("p1 no tempo 1.0", "[ 0, 5] ", bezier.eval(p1, 0.5f).print());
+		assertEquals("p1 no tempo 1.0", "[ 0, 5] ", bezier.eval(p1, 0.8f).print());
+		assertEquals("p1 no tempo 1.0", "[ 0, 5] ", bezier.eval(p1, 1.0f).print());
+	}
+	
+	void execute(void) {
+        cout << "Executing BezierTest" << endl;
+        
+        testInicial();
+    }
+};
+
+#endif /*VORONOITEST_H_*/
+

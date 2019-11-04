@@ -1,0 +1,23 @@
+void main( float4   i_position         : POSITION,
+		   float4   i_normal           : NORMAL,
+  	       float4   i_color            : COLOR,
+   	       float2   i_texCoord         : TEXCOORD0,
+           out float4  o_color			  : COLOR,
+           out float4  o_position         : POSITION,
+           out float2  o_texCoord         : TEXCOORD0,
+           out float4  o_vertexInViewSpace: TEXCOORD1,
+           out float4  o_normalInViewSpace: TEXCOORD2,           
+           out float4  o_normal           : TEXCOORD3,                      
+ const uniform float4x4 modelViewProj,
+ const uniform float4x4 modelView,
+ const uniform float4x4 modelViewIT)  {
+ 
+ 	i_normal = normalize(i_normal);
+ 
+	o_color     = i_color;
+	o_position  = mul(modelViewProj, i_position);
+	o_texCoord  = i_texCoord;
+	o_vertexInViewSpace  = mul(modelView, i_position);	 
+	o_normalInViewSpace  = mul(modelViewIT, i_normal);	 	
+	o_normal  = i_normal;	 		
+}

@@ -1,0 +1,200 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    ID_MAIN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 297
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 165
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_CDLMIXING           ICON                    "cdlmixing.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+ID_MAIN DIALOGEX 0, 0, 490, 172
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Context-Driven, Layered Mixing"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "Pre-mix Layer",IDC_STATIC,12,12,144,30
+    GROUPBOX        "Base Layer",IDC_STATIC,12,42,144,54
+    GROUPBOX        "Modifying Layer",IDC_STATIC,12,96,144,66
+    GROUPBOX        "Mixing Snapshots",IDC_STATIC,6,0,156,168
+    LTEXT           "Name:",IDC_STATIC,18,24,22,8
+    CONTROL         "Install",IDC_CHECK_INSTALL_PM0,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,90,24,35,10
+    CONTROL         "Edit",IDC_CHECK_EDIT_PM0,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,126,24,28,10
+    CONTROL         "pre_mix",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | SS_CENTERIMAGE | WS_GROUP,42,24,30,8
+    LTEXT           "Name:",IDC_STATIC,18,54,22,8
+    CONTROL         "Install",IDC_CHECK_INSTALL_B0,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,90,54,35,10
+    CONTROL         "Edit",IDC_CHECK_EDIT_B0,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,126,54,28,10
+    CONTROL         "park",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | SS_CENTERIMAGE | WS_GROUP,42,54,15,8
+    LTEXT           "Name:",IDC_STATIC,18,66,22,8
+    CONTROL         "Install",IDC_CHECK_INSTALL_B1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,90,66,35,10
+    CONTROL         "Edit",IDC_CHECK_EDIT_B1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,126,66,28,10
+    CONTROL         "city",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | SS_CENTERIMAGE | WS_GROUP,42,66,48,8
+    LTEXT           "Name:",IDC_STATIC,18,78,22,8
+    CONTROL         "Install",IDC_CHECK_INSTALL_B2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,90,78,35,10
+    CONTROL         "Edit",IDC_CHECK_EDIT_B2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,126,78,28,10
+    CONTROL         "warzone",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | SS_CENTERIMAGE | WS_GROUP,42,78,28,8
+    LTEXT           "Name:",IDC_STATIC,18,108,22,8
+    CONTROL         "Edit",IDC_CHECK_EDIT_M0,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,126,108,28,10
+    CONTROL         "dialogue_duck",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | SS_CENTERIMAGE | WS_GROUP,42,108,54,8
+    LTEXT           "Name:",IDC_STATIC,18,120,22,8
+    CONTROL         "Install",IDC_CHECK_INSTALL_M1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,90,120,35,10
+    CONTROL         "Edit",IDC_CHECK_EDIT_M1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,126,120,28,10
+    CONTROL         "interior",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | SS_CENTERIMAGE | WS_GROUP,42,120,30,8
+    LTEXT           "Name:",IDC_STATIC,18,132,22,8
+    CONTROL         "Install",IDC_CHECK_INSTALL_M2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,90,132,35,10
+    CONTROL         "Edit",IDC_CHECK_EDIT_M2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,126,132,28,10
+    CONTROL         "silence",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | SS_CENTERIMAGE | WS_GROUP,42,132,30,8
+    LTEXT           "Name:",IDC_STATIC,18,144,22,8
+    CONTROL         "Install",IDC_CHECK_INSTALL_M3,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,90,144,35,10
+    CONTROL         "Edit",IDC_CHECK_EDIT_M3,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,126,144,28,10
+    CONTROL         "invincible",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | SS_CENTERIMAGE | WS_GROUP,42,144,30,8
+    CONTROL         "Install",IDC_CHECK_INSTALL_M0,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,90,108,35,10
+    GROUPBOX        "Editor",IDC_STATIC,168,0,156,168
+    GROUPBOX        "Central Mix (Output)",IDC_STATIC,330,0,156,168
+    CONTROL         "ambience",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | WS_GROUP,172,144,31,8
+    LTEXT           "guns",IDC_STATIC,204,144,16,8
+    LTEXT           "footsteps",IDC_STATIC,222,144,32,8
+    LTEXT           "birds",IDC_STATIC,257,144,16,8
+    LTEXT           "cars",IDC_STATIC,276,144,14,8
+    LTEXT           "dialogue",IDC_STATIC,294,144,28,8
+    CONTROL         "",IDC_SLIDER_E0,"msctls_trackbar32",TBS_VERT | TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,176,12,18,132,WS_EX_TRANSPARENT
+    CONTROL         "",IDC_SLIDER_E1,"msctls_trackbar32",TBS_VERT | TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,202,12,18,132
+    CONTROL         "",IDC_SLIDER_E2,"msctls_trackbar32",TBS_VERT | TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,228,12,18,132
+    CONTROL         "",IDC_SLIDER_E3,"msctls_trackbar32",TBS_VERT | TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,252,12,18,132
+    CONTROL         "",IDC_SLIDER_E4,"msctls_trackbar32",TBS_VERT | TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,276,12,18,132
+    CONTROL         "",IDC_SLIDER_E5,"msctls_trackbar32",TBS_VERT | TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,300,12,18,132
+    LTEXT           "ambience",IDC_STATIC,334,144,31,8
+    LTEXT           "guns",IDC_STATIC,366,144,16,8
+    LTEXT           "footsteps",IDC_STATIC,384,144,32,8
+    LTEXT           "birds",IDC_STATIC,420,144,16,8
+    LTEXT           "cars",IDC_STATIC,438,144,14,8
+    LTEXT           "dialogue",IDC_STATIC,456,144,28,8
+    CONTROL         "",IDC_SLIDER_CM0,"msctls_trackbar32",TBS_VERT | TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,338,12,18,132,WS_EX_TRANSPARENT
+    CONTROL         "",IDC_SLIDER_CM1,"msctls_trackbar32",TBS_VERT | TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,364,12,18,132
+    CONTROL         "",IDC_SLIDER_CM2,"msctls_trackbar32",TBS_VERT | TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,390,12,18,132
+    CONTROL         "",IDC_SLIDER_CM3,"msctls_trackbar32",TBS_VERT | TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,414,12,18,132
+    CONTROL         "",IDC_SLIDER_CM4,"msctls_trackbar32",TBS_VERT | TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,438,12,18,132
+    CONTROL         "",IDC_SLIDER_CM5,"msctls_trackbar32",TBS_VERT | TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,462,12,18,132
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

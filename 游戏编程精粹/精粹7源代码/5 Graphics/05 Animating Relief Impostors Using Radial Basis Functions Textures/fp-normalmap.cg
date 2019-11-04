@@ -1,0 +1,113 @@
+float3x3 getTangentMatrix(float3 normal) {
+    
+    float3 temp;           
+    float3 tangent;           
+    float3 binormal;          
+	
+	temp = float3(0,1,0);
+	
+	tangent = temp - dot(normal, temp)*normal;
+	tangent = normalize(tangent);
+	binormal= normalize(cross(normal, tangent));                      
+	
+	return  float3x3(-binormal, tangent, normal);
+}
+
+// Phong lighting model
+float4 phongModel(float3 surfaceNormal, 
+				  float3 lightDirection,
+				  float3 halfAngle,
+				  float  surfaceShininess,
+				  float4 diffuseSurfaceColor,
+				  float4 specularSurfaceColor,
+				  float4 ambientLightColor) {
+                       
+  float4 lightColor =diffuseSurfaceColor;                      
+  float4 ambient = diffuseSurfaceColor * ambientLightColor;
+
+  float diffuseFactor = max(0, dot(lightDirection, surfaceNormal));
+  float4 diffuse = lightColor * diffuseSurfaceColor * diffuseFactor;
+                                     
+  float4 specular;
+
+  if (dot(lightDirection, surfaceNormal) <= 0) 
+     specular = float4(0,0,0,0);
+  else {
+     float specularFactor = pow(max(0, dot(halfAngle, surfaceNormal)), surfaceShininess);
+     specular = lightColor * specularSurfaceColor * specularFactor;     
+  }
+          
+  return ambient + diffuse + specular;
+}
+
+float multiquadric(float r, float h) {
+   return sqrt(r*r+h*h);
+}   
+
+float2 evaluateRBF(float2 i_texCoord, float points, float keyTime, float suavization, samplerRECT rbfTexture) {
+	float2 newTexCoord;
+    newTexCoord.xy = float2(0.0, 0.0);
+        
+    for (int i=0; i<points; i++) {
+		//if (i < points) {
+    		float2 access = float2(i, keyTime);
+			float4 rbf = texRECT(rbfTexture, access);
+		
+	    	float distance = sqrt((pow(rbf.x - i_texCoord.x,2)) + (pow(rbf.y - i_texCoord.y,2)));
+    		float temp = multiquadric(distance, suavization);
+						
+    		newTexCoord.xy += temp * rbf.zw;
+	    //}
+    }
+
+    return newTexCoord;
+}
+
+void main(  float4      i_vertexInViewSpace  : TEXCOORD1,
+			float4		i_normalInViewSpace  : TEXCOORD2,
+			float4		i_normal             : TEXCOORD3,			
+			float4	     	i_color	         : COLOR,
+			float2          i_texCoord       : TEXCOORD0,		
+			out float4		o_color	         : COLOR, 
+			const uniform samplerRECT rbfTexture,
+			const uniform sampler2D texture,
+			const uniform sampler2D normal,
+			const uniform float keyTime,
+			const uniform float shininess,
+			const uniform float points,
+			const uniform float4 lightInViewSpace,
+			const uniform float suavization,
+			const uniform float4x4 modelViewPS) {	
+   
+    // RBF Evaluation.
+	i_texCoord = clamp(i_texCoord, 0, 1);
+
+    float2 newTexCoord = i_texCoord;
+    newTexCoord.xy = evaluateRBF(i_texCoord, points, keyTime, suavization, rbfTexture);
+	
+	// Normal from normal map;
+	float4 normalVector = tex2D(normal, newTexCoord);
+                
+	normalVector = (normalVector - 0.5)* 2.0;
+	normalVector.xy *= 3.5;
+	
+    float3 Nb = normalize(normalVector.rgb); 
+
+	// NormalMap Tangent Space
+	float3x3 MT = getTangentMatrix(normalize(i_normalInViewSpace.xyz));  	
+	Nb = normalize(mul(Nb, MT));
+	
+   	// Color from texture
+    o_color = tex2D (texture, newTexCoord);   
+
+    // Phong
+	float4 lightColor       = float4(0.8f, 0.8f, 0.8f, 1.0f);
+	float4 ambientLight     = float4(0.3f, 0.3f, 0.3f, 1.0f);   
+	float4 Ks  				= float4(0.9f, 0.9f, 0.5f, 1.0f);
+
+    float3 ViewerDirection = normalize(-i_vertexInViewSpace.xyz);
+	float3 LightDirection  = normalize(lightInViewSpace.xyz - i_vertexInViewSpace.xyz);
+	float3 halfAngle       = normalize(ViewerDirection + LightDirection);  	
+    
+	o_color = phongModel(Nb, LightDirection, halfAngle, shininess, o_color, Ks, ambientLight );   	
+}

@@ -1,0 +1,18 @@
+FaceGen Phonemes:
+
+aah
+B,M,P
+big ahh (looks like 'O')
+ch,J,sh
+D,S,T
+ee
+eh
+F,V
+i
+K
+N
+oh
+ooh,Q
+R
+th
+W

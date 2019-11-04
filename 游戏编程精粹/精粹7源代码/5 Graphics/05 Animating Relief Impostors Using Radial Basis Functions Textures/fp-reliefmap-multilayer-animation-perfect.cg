@@ -1,0 +1,313 @@
+float3x3 getTangentMatrix(
+               float3 normal, float3x3 toView) {
+    
+    float3 temp;           
+    float3 tangent;           
+    float3 binormal;           
+	temp = float3(1,0,0);
+	
+	tangent = temp - dot(normal, temp)*normal;
+	tangent = normalize(tangent);
+	binormal= normalize(cross(normal, tangent));                      	
+
+	binormal *= normal.z;
+               
+	tangent = normalize(mul(toView, tangent));
+	binormal = normalize(mul(toView, binormal));
+	normal = normalize(mul(toView, normal));
+	
+	
+	float3x3 MT =  float3x3(tangent, binormal, normal);
+	return MT;
+}
+
+float multiquadric(float r, float h) {
+   return sqrt(r*r+h*h);
+} 
+
+float2 evaluateRBF(float2 i_texCoord, float points, float keyTime, float suavization, samplerRECT rbfTexture) {
+	float2 newTexCoord;
+    newTexCoord.xy = float2(0.0, 0.0);
+    
+	i_texCoord = clamp (i_texCoord, 0.0, 1.0);
+
+    for (int i=0; i<points; i++) {
+		//if (i < points) {
+    		float2 access = float2(i, keyTime);
+			float4 rbf = texRECT(rbfTexture, access);
+		
+	    	float distance = sqrt((pow(rbf.x - i_texCoord.x,2)) + (pow(rbf.y - i_texCoord.y,2)));
+    		float temp = multiquadric(distance, suavization);
+    
+    		newTexCoord.xy += temp * rbf.zw;
+	    //}
+    }
+
+    return newTexCoord;
+}
+
+// RELIEF MAP
+// ray intersect quad depth map with linear search
+void ray_intersect_qdrm_linear(
+      in sampler2D quad_depth_map,
+      inout float3 s, 
+      inout float3 ds,
+      
+	  samplerRECT rbfTexture,
+  	  float keyTime,
+	  float maxKeyTime,
+	  float points,
+	  float suavization      
+      )
+{
+   const int linear_search_steps=20;
+   
+   ds/=linear_search_steps;
+   int keyTimeBack = (int)(keyTime+maxKeyTime/2) % (int)maxKeyTime;
+
+   // search front to back for first point inside object
+   for( int i=0;i<linear_search_steps-1;i++ ) {
+
+		float4 t;
+
+	    float2 newTexCoordBack = float2(0.0,0.0);
+		float2 newTexCoordFront = float2(0.0,0.0);
+		for (int j=0; j<points; j++) {
+			float4 rbf = texRECT(rbfTexture, float2(j, keyTimeBack));
+
+    		float distance = sqrt((pow(rbf.x - s.x,2)) + (pow(rbf.y - s.y,2)));
+   			newTexCoordBack.xy += rbf.zw * multiquadric(distance, suavization);
+  
+			rbf = texRECT(rbfTexture, float2(j, keyTime));
+
+    		distance = sqrt((pow(rbf.x - s.x,2)) + (pow(rbf.y - s.y,2)));
+   			newTexCoordFront.xy +=  rbf.zw * multiquadric(distance, suavization);
+		}
+
+		t.xy =tex2D(quad_depth_map,newTexCoordFront).xy;
+		t.zw =tex2D(quad_depth_map,newTexCoordBack).zw; 		
+		
+		float4 d=s.z-t;	// compute distances to each layer
+		d.xy*=d.zw;	
+		d.x*=d.y;	// x=(x*z)*(y*w)
+		
+		if (d.x>0)	// if ouside object move forward
+			s+=ds;
+   }
+}
+   
+// ray intersect quad depth map with binary search
+void ray_intersect_qdrm_binary(
+      in sampler2D quad_depth_map,
+      inout float3 s, 
+      inout float3 ds, 
+	  //out float4 tOut,
+      
+	  samplerRECT rbfTexture,
+  	  float keyTime,
+	  float maxKeyTime,
+	  float points,
+	  float suavization            
+      )
+{
+   const int binary_search_steps=5;
+   
+	int keyTimeBack = (int)(keyTime+maxKeyTime/2) % (int)maxKeyTime;
+
+   float3 ss=sign(ds.z);
+
+   // recurse around first point for closest match
+   for( int i=0;i<binary_search_steps;i++ )
+   {
+		ds*=0.5;	// half size at each step
+		
+		float4 t;
+
+	    float2 newTexCoordBack = float2(0.0,0.0);
+		float2 newTexCoordFront = float2(0.0,0.0);
+		for (int j=0; j<points; j++) {
+			float4 rbf = texRECT(rbfTexture, float2(j, keyTimeBack));
+
+    		float distance = sqrt((pow(rbf.x - s.x,2)) + (pow(rbf.y - s.y,2)));
+   			newTexCoordBack.xy += rbf.zw * multiquadric(distance, suavization);
+    
+			rbf = texRECT(rbfTexture, float2(j, keyTime));
+
+    		distance = sqrt((pow(rbf.x - s.x,2)) + (pow(rbf.y - s.y,2)));
+   			newTexCoordFront.xy += rbf.zw * multiquadric(distance, suavization);
+		}
+		t.xy =tex2D(quad_depth_map,newTexCoordFront).xy;		
+		t.zw =tex2D(quad_depth_map,newTexCoordBack).zw; 
+
+		float4 d=s.z-t;	// compute distances to each layer
+		d.xy*=d.zw;	d.x*=d.y;	// x=(x*z)*(y*w)
+		
+		if (d.x<0)	// if inside
+		{
+			ss=s;		// store good return position
+			//tOut = float4(newTexCoordFront, newTexCoordBack);
+			s-=2*ds;	// move backward
+		}
+		s+=ds;	// else move forward
+   }
+
+   s=ss;
+}
+
+void main(  float2       i_texCoord     : TEXCOORD0,
+		    float3       i_vertexInViewSpace  : TEXCOORD1,
+			float3	     i_normalInViewSpace  : TEXCOORD2,
+			float3	     i_normal       : TEXCOORD3,			
+			float4	     i_color	    : COLOR,
+			out float4	 o_color	    : COLOR, 
+			const uniform samplerRECT rbfTexture,
+			const uniform sampler2D texture,
+			const uniform sampler2D normal,
+			const uniform sampler2D normal_map_x:TEXUNIT2,
+			const uniform sampler2D normal_map_y:TEXUNIT3,			
+			const uniform float keyTime,
+			const uniform float shininess,
+			const uniform float points,
+			const uniform float4 lightInViewSpace,
+			const uniform float suavization,
+			const uniform float4x4 modelViewPS) {	
+	
+    // RBF Evaluation.    
+    float maxKeyTime = 10;
+    
+	// The depth of each layer		
+ 	float depth = 0.5f;
+    
+	// OK: Tangent Space
+	float3x3 tangentspace=getTangentMatrix(normalize(i_normal).xyz, float3x3(modelViewPS));
+
+	// OK: View vector in tangent space.
+	float3 viewInTangentSpace = mul(tangentspace,i_vertexInViewSpace); 
+	
+	// OK: Light vector in tangent space
+	float3 i_light = mul(tangentspace,lightInViewSpace.xyz-i_vertexInViewSpace); 
+
+	// OK: view vector normalized in tangent space
+	float3 v= normalize(viewInTangentSpace);
+	
+	// search start position
+	float3 s= float3(i_texCoord,0);
+
+	// separate direction (front or back face)
+	float dir=v.z;
+	v.z=abs(v.z);
+
+	// depth bias (1-(1-d)*(1-d))
+	float d=depth*(2*v.z-v.z*v.z);
+
+	// center z so that depth 0.5 is at polygon surface
+	v/=v.z;
+	v.xy*=d;
+	s.xy-=v.xy*0.5;
+
+	// if viewing from backface
+	if (dir>0) {	
+		s.z=0.996;	// search from back to front
+		v.z=-v.z;
+	}
+
+	float4 t;
+
+	// ray intersect quad depth map
+	ray_intersect_qdrm_linear(normal,s,v, rbfTexture, keyTime, maxKeyTime, points, suavization);
+	ray_intersect_qdrm_binary(normal,s,v, rbfTexture, keyTime, maxKeyTime, points, suavization);
+
+	float alpha=1;
+	// discard if no intersection is found
+	if (s.z>0.997) alpha=0;
+	if (s.z<0.003) alpha=0;
+
+	int keyTimeBack = (int)(keyTime+maxKeyTime/2) % (int)maxKeyTime;
+
+	float2 sFront = evaluateRBF(s.xy, points, keyTime, suavization, rbfTexture);
+	float2 sBack = evaluateRBF(s.xy, points, keyTimeBack, suavization, rbfTexture);
+
+	// get quad depth and color at intersection
+	float4 c;
+	float4 cFront = tex2D(texture,sFront.xy);
+	float4 cBack  = tex2D(texture,sBack.xy);
+
+    float4 q;
+    q.xy =tex2D(normal,sFront.xy).xy;
+    q.zw =tex2D(normal,sBack.xy).zw;
+
+	float4 nx;
+	nx.xy=tex2D(normal_map_x,sFront.xy).xy;
+	nx.zw=tex2D(normal_map_x,sBack.xy).zw;
+
+	float4 ny;
+	ny.xy=tex2D(normal_map_y,sFront.xy).xy;
+	ny.zw=tex2D(normal_map_y,sBack.xy).zw;
+
+	// compute normal
+	float4 z=abs(s.z-q);
+	float3 n=float3(nx.x,ny.x,1);
+	float zt=z.x;
+	c = cFront;
+	if (z.y<zt) {
+		zt=z.y;
+		n=float3(nx.y,ny.y,-1);
+		c=cFront;
+	}
+	if (z.z<zt) {
+		zt=z.z;
+		n=float3(nx.z,ny.z,1);
+		c=cBack;
+	}
+	if (z.w<zt) {
+		n=float3(nx.w,ny.w,-1);
+		c=cBack;
+	}
+	n.xy=n.xy*2-1; // expand to [-1,1] range
+	n.z*=sqrt(max(0,1.0-dot(n.xy,n.xy))); // recompute z
+
+	//o_color= float4(n.xyz,1);
+	//return;
+
+	// restore view
+	v=normalize(viewInTangentSpace.xyz);
+
+	// compute light vector in view space
+	float3 l=normalize(i_light).xyz;
+
+	// compute diffuse and specular terms
+	float ldotn=saturate(dot(l,n));
+	float ndoth=saturate(dot(n,normalize(l-v)));
+
+	// Shadows
+	// scale light vector using depth factor and depth bias
+	/*
+	float light_depth_bias=depth*(2*l.z-l.z*l.z);
+	l.xy*=light_depth_bias;
+	l.z=-l.z;
+	l/=l.z;
+
+	// compute light ray entry point in texture space
+	float3 ls=s-l*s.z;
+
+	// ray intersect from light
+	ray_intersect_qdrm_linear(normal,ls,l, rbfTexture, keyTime, maxKeyTime, points, suavization);
+
+	if (ls.z<s.z-0.05) { // if pixel in shadow
+		ldotn=0;
+		ndoth=0;
+	}*/
+
+	float4 diffuse = float4(0.5f, 0.5f, 0.5f, 1.0f);
+	float4 ambient = float4(0.3f, 0.3f, 0.3f, 1.0f);   
+	float4 specular= float4(0.3f, 0.3f, 0.3f, 1.0f);
+
+	// compute final color with lighting
+	float4 finalcolor;
+	finalcolor.xyz = c.xyz*(ambient.xyz + diffuse.xyz*ldotn) + 
+		c.w*specular.xyz*pow(ndoth,specular.w);
+	finalcolor.w=alpha;
+
+	o_color=finalcolor;
+}
+

@@ -1,0 +1,19 @@
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "vocab", "vocab.vcproj", "{F665BF7A-9F01-4C34-8178-C38D4DFAE6BA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F665BF7A-9F01-4C34-8178-C38D4DFAE6BA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F665BF7A-9F01-4C34-8178-C38D4DFAE6BA}.Debug|Win32.Build.0 = Debug|Win32
+		{F665BF7A-9F01-4C34-8178-C38D4DFAE6BA}.Release|Win32.ActiveCfg = Release|Win32
+		{F665BF7A-9F01-4C34-8178-C38D4DFAE6BA}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

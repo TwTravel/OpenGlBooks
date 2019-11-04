@@ -1,0 +1,41 @@
+Blinn
+WinXP, 1.8Ghz, 512MB, GeForce FX 5700
+
+Vitor
+Ubuntu, AMD64 1.8Ghz, 1GB, GeForce FX 5200
+
+Gouraud
+WinXP, AMD64 2.21Ghz, 2GB, GeForce 8800 GTX
+
+Reynolds
+WinXP, AMD64 2.21Ghz, 2GB, GeForce 6600 
+
+Naylor
+WinXP, AMD64 2,21Ghz, 2GB, GeForce 7800 GTX
+
+Nova Tabela: 
+                    |   textura     |   normalmap   |   reliefmap   |  mreliefmap   |  freliefmap   |
+-----------------------------------------------------------------------------------------------------
+Naylor Desanimado   |    5000.00    |    1830.00    |    221.00     |               |               |
+Naylor Animado      |               |     340.00    |     98.00     |      6.95     |      60.00    |
+-----------------------------------------------------------------------------------------------------
+Gouraud Desanimado  |    9400.00    |    4600.00    |   1100.00     |               |               |
+Gouraud Animado     |               |    3000.00    |    710.00     |     84.50     |     500.50    |
+-----------------------------------------------------------------------------------------------------
+Reynolds Desanimado |     700.00    |     266.00    |     47.00     |               |               |
+Reynolds Animado    |               |      86.00    |     21.00     |      1.56     |      13.50    |
+-----------------------------------------------------------------------------------------------------
+
+Antigos
+                   |   textura    |   normalmap   |   reliefmap   |  mreliefmap    |   freliefmap   |
+Blinn Desanimado   |     630      |     76.69     |      4.32     |       xx       |       xx       |
+Blinn Animado      |      xx      |      6.70     |      1.58     |       --       |       --       |
+Vitor Desanimado   |     900      |     34.69     |      2.20     |       xx       |       xx       |
+Vitor Animado      |      xx      |      3.50     |      0.80     |       --       |       --       |
+Gouraud Desanimado |   13000      |   4691.69     |    694.20     |       xx       |       xx       |
+Gouraud Animado    |      xx      |   1254.50     |    385.88     |      17.25     |	 500.12     |
+	Sem Sombras|                                                     26.00     |
+	16 pontos  |                                                     40.20     |
+	Otimizado  |                                                     82.20     |
+Reynolds Desanimado|     695      |    266.50     |     38.20     |       xx       |      
+Reynolds Animado   |      xx      |     28.50     |     13.88     |       1.00     |      13.50

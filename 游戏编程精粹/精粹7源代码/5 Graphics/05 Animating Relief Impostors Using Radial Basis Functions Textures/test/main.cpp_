@@ -1,0 +1,69 @@
+//-----------------------------------------------------------------------------
+// Name: GABlade.h
+// Original code by Vitor Fernando Pamplona (vitor@babaxp.org)
+//
+// Copyright (c) 2006, Vitor Fernando Pamplona
+// Copying, use and development for non-commercial purposes permitted.
+// All rights for commercial use reserved; for more information       
+// contact Vitor Fernando Pamplona (vitor@babaxp.org).                    
+//                                                                     
+// This software is unsupported.                                      
+//-----------------------------------------------------------------------------
+//#define _DEBUG_
+
+#include <sstream>
+#include <iostream>
+#include <string>
+
+#include <vector>
+#include <math.h>
+
+#include <GL/gl.h>
+#include <GL/glut.h>
+#include <IL/il.h>
+#include <IL/ilu.h>
+#include <Cg/cg.h>
+#include <Cg/cgGL.h>
+
+extern "C" {
+	#include <f2c.h>
+	#include <clapack.h>
+}
+
+#include "../src/Node.h"
+#include "../src/List.h"
+#include "../src/Vector.h"
+#include "../src/Image.h"
+#include "../src/RBF.h"
+#include "../src/GeneralViewer.h"
+#include "../src/Animation.h"
+#include "../src/KeyFrames.h"
+#include "../src/Hermite.h"
+#include "../src/RBFWriter.h"
+#include "../src/Viewer.h"
+#include "../src/ImageLoader.h"
+
+#include "Testcase.h"
+#include "RBFTest.h"
+#include "HermiteTest.h"
+
+int main(int argc, char *argv[]) {	
+
+	List<Testcase *> toTest;
+
+	toTest.append(new RBFTest());
+	toTest.insert(new HermiteTest());
+	
+	
+	Testcase * tcase = toTest.first();
+
+	for (int i = 0; i<toTest.length(); i++) {
+		tcase->execute();
+		tcase->print();
+		tcase = toTest.next();
+	}
+
+	toTest.clear();
+
+	return 0;
+}
